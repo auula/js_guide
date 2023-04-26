@@ -23,3 +23,18 @@ console.log("empty_arr:",empty_arr);
 empty_arr.reverse();
 
 console.log(empty_arr);
+
+
+// 通过指定下标的方式创建数组，并且指定一个 lenght 属性
+const a = {0: 1, 1: 2, 2: 3, length: 3};
+
+console.log(a); // {0: 1, 1: 2, 2: 3, length: 3}
+
+Array.prototype.reverse.call(a); //same syntax for using apply()
+
+console.log(a); // {0: 3, 1: 2, 2: 1, length: 3}
+
+// 生产环境紧张写这样的代码，以为自定义的 length 会覆盖掉原先的数组长度
+console.log("array.length:",a.length);
+
+
