@@ -12,7 +12,7 @@ arr[0] = 100;
 
 console.log(arr);
 
-// 默认每个对象都一个数组属性
+// 默认每个对象都方法，包括数组也有方法，预先设计好的
 
 let empty_arr = [];
 
@@ -34,7 +34,7 @@ Array.prototype.reverse.call(a); //same syntax for using apply()
 
 console.log(a); // {0: 3, 1: 2, 2: 1, length: 3}
 
-// 生产环境紧张写这样的代码，以为自定义的 length 会覆盖掉原先的数组长度
+// 生产环境禁止写这样的代码，因为自定义的 length 会覆盖掉原先的数组长度
 console.log("array.length:",a.length);
 
 
