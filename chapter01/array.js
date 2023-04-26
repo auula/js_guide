@@ -2,6 +2,8 @@
 
 let arr = [1,2,3,4,5];
 
+console.log(arr);
+
 // 打印长度
 console.log("arr length:",arr.length);
 
@@ -14,7 +16,9 @@ console.log(arr);
 
 let empty_arr = [];
 
-empty_arr.push(1,2,3);
+empty_arr.push(1,2,3,4,5);
+
+console.log("empty_arr:",empty_arr);
 
 empty_arr.reverse();
 
