@@ -12,9 +12,21 @@ console.log(arr);
 
 
 function scope() {
+	// 提前被访问到了内存
 	console.log(s);
 	var s = 12.3;
 	console.log(s);
+
+	var i = 0;
+	console.log(i);
+	if (true) {
+		// 覆盖掉外面掉 i
+		var i = 200;
+		console.log(i);
+	}
+
+	console.log(i);
+	
 };
 
 scope();
