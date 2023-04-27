@@ -7,12 +7,13 @@ class Point {
 	}
 
 	distance() {
-		retrun Math.sqrt(this.x * this.x + 
-				 this.y * this.y
-		);
+		return Math.sqrt(this.x * this.x + this.y * this.y);
 	}
 }
 
-let p = new Point(6,8);
 
-p.distance();
+let p = new Point(61,8);
+
+const sqrt = p.distance();
+
+console.log(sqrt);
