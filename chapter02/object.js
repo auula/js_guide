@@ -2,12 +2,15 @@
 
 var people = null;
 
-console.log("people type:",typeof people);
+console.log("people type:", typeof people);
 
 function get() {
-	console.log("people bool type:",typeof !people);
+	console.log("people bool type:", typeof !people);
 	if (!people) {
-		people = {name:"Leon",age:24};
+		people = {
+			name: "Leon",
+			age: 24
+		};
 	}
 	return people;
 }
