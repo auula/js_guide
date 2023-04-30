@@ -16,3 +16,16 @@ console.log(toCartesian(x,y));
 let [s, ...w] = "Hello World";
 
 console.log(s,w);
+
+let color = {
+	r:255,
+	g:255,
+	b:255,
+};
+
+// 解构对象时必须使用大括号
+let {r,g,b} = color;
+
+console.log(color);
+
+console.log(r,g,b);
