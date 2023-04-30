@@ -11,3 +11,8 @@ function toCartesian(r,theta) {
 }
 
 console.log(toCartesian(x,y));
+
+// 从第二个字符启都装进 w 变量中
+let [s, ...w] = "Hello World";
+
+console.log(s,w);
