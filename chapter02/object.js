@@ -14,3 +14,9 @@ function get() {
 
 
 console.log(get());
+
+let fn = function() {
+	return "func .toString()";
+}
+
+console.log(fn.toString());
