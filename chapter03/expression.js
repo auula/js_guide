@@ -14,3 +14,8 @@ let p = {
 let arr = [1+2,0===0,p];
 
 console.log(arr);
+
+console.log(arr[2].name);
+
+// 语法糖
+console.log(p?.nil);
