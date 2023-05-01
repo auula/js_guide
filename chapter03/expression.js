@@ -17,5 +17,5 @@ console.log(arr);
 
 console.log(arr[2].name);
 
-// 语法糖
+// 语法糖,可链接访问
 console.log(p?.nil);
