@@ -19,3 +19,24 @@ console.log(arr[2].name);
 
 // 语法糖,可链接访问
 console.log(p?.nil);
+
+function bubble(arr) {
+	for (let i = 0;i<arr.length - 1;i++) {
+		for (let j = 0; j < arr.length - 1 - i;j++) {
+			if (arr[j] > arr[j+1]) {
+				let temp = arr[j+1];
+				arr[j+1] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	return arr;
+}
+
+function sort(arr,fn) {
+	return fn?.(arr);
+}
+
+let array = [12,345,556,757,132,45,65];
+
+console.log(sort(array,bubble));
