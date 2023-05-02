@@ -17,6 +17,9 @@ console.log(arr);
 
 console.log(arr[2].name);
 
+// 这样如果 arr 中没有第 4 个元素或者第 4 个元素没有 name 属性，程序也不会抛出异常
+console.log(arr?.[3]?.name);
+
 // 语法糖,可链接访问
 console.log(p?.nil);
 
@@ -37,4 +40,5 @@ function sort(arr,fn) {
 
 let array = [12,345,556,757,132,45,65];
 
+console.log(sort(array,null));
 console.log(sort(array,bubble));
