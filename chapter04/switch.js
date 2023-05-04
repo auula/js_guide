@@ -3,11 +3,11 @@
 function convert(x) {
 	switch(x) {
 		case "number":
-			return x.toString();
+			return x.toString(16);
 		case "string":
 			return '"' + x + '"';
 		default:
-			return String(x);
+			return x.toString();
 	}
 }
 
