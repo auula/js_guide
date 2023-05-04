@@ -2,6 +2,7 @@
 
 let n = 0;
 
+// 先判断循环条件再执行	
 while (n < 10) {
 	n += 1;
 }
@@ -14,6 +15,7 @@ function printArray(arr) {
 	if (len === 0) {
 		console.log("empty array.");
 	} else {
+		// 先执行一次再判断是否继续循环条件
 		do {
 			console.log(arr[i]);
 		} while (++i < len);
