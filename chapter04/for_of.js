@@ -33,3 +33,7 @@ for (let [k,v] of Object.entries(s)) {
 //		}
 //	}
 //}
+
+for (let e in s) {
+	console.log(s[e]);
+}
