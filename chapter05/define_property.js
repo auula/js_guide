@@ -10,4 +10,11 @@ Object.defineProperty(obj, 'propertyName', {
   configurable: true       // 设置属性为可配置
 });
 
+
+// 判断某个属性是否为只读
+const descriptor = Object.getOwnPropertyDescriptor(obj, 'propertyName');
+const isReadOnly = descriptor && !descriptor.writable;
+
+console.log(isReadOnly); // 输出 true 或 false
+
 console.log(obj);
