@@ -16,3 +16,25 @@ console.log(arr2);
 let arr3 = [1,,2,3,,1];
 console.log(arr3.length);
 console.log(arr3);
+
+// 拆分字符串，构建数组
+let digital = [..."1381238109hdsadhashddhasd"];
+
+console.log(digital);
+
+// 扩展表达式
+let letters = [..."hello world"];
+
+letters[1] = 0;
+letters[2] = 3;
+
+// 有序集合
+let sets = [...new Set(letters)];
+
+console.log(sets);
+
+let copy1 = [1,2,3];
+let copy2 = [...copy1];
+// 不会共享，而是复制值
+copy1[0] = 'X';
+console.log(copy2);
