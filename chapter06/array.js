@@ -48,3 +48,7 @@ const arr11 = Array.of();
 const arr22 = Array.of(1, 2, 3);
 
 const arr33 = Array.of('apple', 'banana', 'orange');
+
+console.log(arr11);
+console.log(arr22);
+console.log(arr33);
