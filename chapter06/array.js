@@ -11,3 +11,8 @@ let arr2 = [...arr1,["array",{x:123.13,y:3.1415}]];
 
 console.log(arr2.length);
 console.log(arr2);
+
+// 这个数组的下标 0 和 4 的元素值为没有定义
+let arr3 = [1,,2,3,,1];
+console.log(arr3.length);
+console.log(arr3);
