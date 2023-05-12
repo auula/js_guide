@@ -38,3 +38,13 @@ let copy2 = [...copy1];
 // 不会共享，而是复制值
 copy1[0] = 'X';
 console.log(copy2);
+
+let arr4 = new Array(1,2,4,5,6,78,..."12312312","string");
+
+console.log(arr4);
+
+const arr11 = Array.of();
+
+const arr22 = Array.of(1, 2, 3);
+
+const arr33 = Array.of('apple', 'banana', 'orange');
