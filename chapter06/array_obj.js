@@ -25,3 +25,20 @@ for (v of arr) {
 
 // 数组是一个特殊的对象可以自己维护 length 并且索引必须是 0 - (2^32-2)
 console.log(arr.length)
+
+// 创建了一个元素为 5 长度的元素
+let a = Array(5);
+console.log(a.length)
+
+// 空数组 undefined  检查是否有元素
+// a1 长度是 1 而不是 2
+let a1 = [,];
+console.log(a1.length)
+
+let a2 = [undefined];
+
+// a1 是无值的
+console.log(0 in a1)
+
+// a2 是有值的
+console.log(0 in a2)
