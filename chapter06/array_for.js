@@ -33,3 +33,7 @@ for (const [i,v] of word.entries()) {
 }
 
 console.log(everyother);
+
+word.forEach(v => {
+    console.log(v);
+});
