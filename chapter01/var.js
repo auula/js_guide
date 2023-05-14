@@ -10,6 +10,7 @@ array();
 
 console.log(arr);
 
+var i = 100;
 
 function scope() {
 	// 提前被访问到了内存
@@ -30,3 +31,5 @@ function scope() {
 };
 
 scope();
+
+console.log(i);
