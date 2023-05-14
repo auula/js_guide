@@ -38,8 +38,13 @@ arr3.unshift(4);
 
 // 从头部返回
 console.log(arr3.pop())
+// 尾部返回
+console.log(arr3.shift())
 
+// 删除一个元素，类似于给元素赋值为 undefined
 delete arr3[1];
+
+console.log(arr3[1])
 
 console.log(1 in arr3)
 
