@@ -24,7 +24,6 @@ for (const ele of nil) {
 
 console.log(strNil);
 
-
 // 通过内置的迭代方法实现 索引 和 值 的变量
 let everyother = "";
 
