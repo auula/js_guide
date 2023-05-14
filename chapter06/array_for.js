@@ -12,7 +12,6 @@ for (const ele of word) {
 
 console.log(str)
 
-
 let nil = [0,,,,undefined,0,0];
 
 console.log(nil);
@@ -24,3 +23,13 @@ for (const ele of nil) {
 }
 
 console.log(strNil);
+
+
+// 通过内置的迭代方法实现 索引 和 值 的变量
+let everyother = "";
+
+for (const [i,v] of word.entries()) {
+    if (i % 2 === 0) everyother += v;
+}
+
+console.log(everyother);
