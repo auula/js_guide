@@ -11,3 +11,16 @@ for (const ele of word) {
 }
 
 console.log(str)
+
+
+let nil = [0,,,,undefined,0,0];
+
+console.log(nil);
+
+let strNil = "";
+
+for (const ele of nil) {
+    strNil += ele;
+}
+
+console.log(strNil);
