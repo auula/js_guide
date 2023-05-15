@@ -19,3 +19,10 @@ console.log(a.find( v => v % 2 === 0));
 
 // 在数组中查找某个元素的下标
 console.log(a.findIndex( v => v === 2));
+
+// js 中对多维数组中元素打平操作
+
+let m = [1,2,3,4,5,[6,7,[8,9,0,[11,12,13]]]];
+
+// 去掉外层嵌套层次
+console.log(m.flat(1));
