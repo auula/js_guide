@@ -13,3 +13,9 @@ console.log(a);
 a = a.filter(v => v % 2 === 0);
 
 console.log(a);
+
+// 在数组中查找某个元素
+console.log(a.find( v => v % 2 === 0));
+
+// 在数组中查找某个元素的下标
+console.log(a.findIndex( v => v === 2));
