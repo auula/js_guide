@@ -1,3 +1,5 @@
+// js 中的斐波拉契数列函数
+
 function fibonacci(n) {
   if (n <= 0) {
     return [];

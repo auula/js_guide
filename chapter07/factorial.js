@@ -1,4 +1,4 @@
-// js 中的斐波拉契数列函数
+// 函数递归实现阶乘
 
 function factorial(x) {
 	if (x <= 1) return 1;
