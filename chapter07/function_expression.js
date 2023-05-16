@@ -18,3 +18,11 @@ console.log(t);
 // lambda 表达式方式实现函数
 let sum = (x,y) => {return x + y};
 console.log(sum(10,10));
+
+// 函数内部嵌入函数
+function fn(a,b) {
+    function square(x) {return x * x};
+    return Math.sqrt(square(a) + square(b));
+}
+
+console.log(fn(10,10));
