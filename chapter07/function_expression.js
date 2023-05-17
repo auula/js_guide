@@ -26,3 +26,13 @@ function fn(a,b) {
 }
 
 console.log(fn(10,10));
+
+
+// js 中对象方法属性
+let obj = {name:"Leon"};
+
+obj.SayHi = function() {
+    console.log(`Hi,i am is ${this.name}!`);
+};
+
+obj.SayHi();
