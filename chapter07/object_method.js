@@ -37,9 +37,9 @@ let s = {
     },
   };
   
-  s.x(100).y(200).t(300);
+s.x(100).y(200).t(300);
   
-  console.log(s.x, s.y, s.t);
+console.log(s.x, s.y, s.t);
 
 // 会隐式调用的 valueof() 方法
 console.log(s + "sss");
