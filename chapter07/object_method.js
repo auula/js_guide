@@ -7,6 +7,15 @@ obj.SayHi = function() {
 
 obj.SayHi();
 
+function run() {
+    console.log("runing ..");
+}
+
+// 把 run 绑定到 obj 上
+run.call(obj);
+obj.run;
+
+
 // 为对象添加方法
 let calculator = {
     operand1: 10,
