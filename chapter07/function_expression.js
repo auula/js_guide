@@ -50,3 +50,20 @@ function sum_v2(arr) {
 // console.log(sum_v2("11",2,3,4,5,6,7))
 
 console.log(sum_v2([1,2,3,4,5,6,7]))
+
+// js 中的函数可以有自有属性
+uniqueIntger.counter = 1;
+
+function uniqueIntger() {
+    return uniqueIntger.counter++;
+}
+
+console.log(uniqueIntger());
+console.log(uniqueIntger());
+
+// js 中的匿名函数调用
+(function(){
+    // 把全句变量变成局部的
+    uniqueIntger.counter = 1;
+    console.log(uniqueIntger())
+}());
