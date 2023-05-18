@@ -31,6 +31,3 @@ d.count();
 c.reset();
 console.log(c.count());
 console.log(d.count());
-
-
-
