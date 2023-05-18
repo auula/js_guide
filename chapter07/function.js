@@ -9,7 +9,7 @@ let obj = {x:1};
 
 // 会把 fn 绑定到 obj 上，并且返回一个新的函数
 let g = fn.bind(obj);
-
+// 11
 console.log(g(10));
 
 function sum(y) {
@@ -17,8 +17,14 @@ function sum(y) {
 }
 
 let result = sum.call(obj,100);
-
+// 101
 console.log(result);
 
 // 通过内置的 Function 构造函数创建
+
+const square = new Function("x","return x * x");
+// 100
+console.log(square(10));
+
+
 
