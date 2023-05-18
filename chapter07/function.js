@@ -21,7 +21,6 @@ let result = sum.call(obj,100);
 console.log(result);
 
 // 通过内置的 Function 构造函数创建
-
 const square = new Function("x","return x * x");
 // 100
 console.log(square(10));
