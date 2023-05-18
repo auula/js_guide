@@ -28,6 +28,9 @@ function counter() {
 let c = counter(),d = counter();
 c.count();
 d.count();
-c.reset()
+c.reset();
 console.log(c.count());
 console.log(d.count());
+
+
+
