@@ -12,3 +12,11 @@ let g = fn.bind(obj);
 
 console.log(g(10));
 
+function sum(y) {
+    return this.x + y;
+}
+
+sum.call(obj,100);
+
+obj.sum;
+
