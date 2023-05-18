@@ -46,4 +46,7 @@ function sum_v2(arr) {
     return total;
 }
 
+// 因为元素不是数组类型，那么就会出现异常
+// console.log(sum_v2("11",2,3,4,5,6,7))
+
 console.log(sum_v2([1,2,3,4,5,6,7]))
