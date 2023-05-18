@@ -25,6 +25,3 @@ console.log(result);
 const square = new Function("x","return x * x");
 // 100
 console.log(square(10));
-
-
-
