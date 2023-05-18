@@ -32,3 +32,18 @@ function vectorAdd(v1,v2) {
 }
 
 vectorAdd([1,2],[3,4]);
+
+// 在 js 中没有类型系统，函数参数没有类型限制
+function sum_v2(arr) {
+    let total = 0;
+    for (let ele of arr) {
+        if (typeof ele === "number") {
+            total += ele;
+        }else{
+            throw new TypeError("sum(): elements must be number.");
+        }
+    }
+    return total;
+}
+
+console.log(sum_v2([1,2,3,4,5,6,7]))
