@@ -63,7 +63,7 @@ console.log(uniqueIntger());
 
 // js 中的匿名函数调用
 (function(){
-    // 把全句变量变成局部的
+    // 把全局变量变成局部的
     uniqueIntger.counter = 1;
     console.log(uniqueIntger())
 }());
