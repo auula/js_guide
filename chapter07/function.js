@@ -16,7 +16,7 @@ function sum(y) {
     return this.x + y;
 }
 
-sum.call(obj,100);
+let result = sum.call(obj,100);
 
-obj.sum;
+console.log(result);
 
