@@ -13,7 +13,9 @@ range.methods = {
     // 检查某个值是否在范围内
     includes(x) {return this.from <= x && x <= this.to;},
 
-    // 设置迭代器
+    // 是一个特殊的生成器方法，用于定义一个可迭代对象的迭代器，
+    // 当一个对象实现了这个方法时，它就成为一个可迭代对象，
+    // 并且可以使用 for...of 循环或其他消费可迭代对象的方法进行迭代操作。
     *[Symbol.iterator]() {
         for(let x = Math.ceil(this.from);x <= this.to;x++) yield x;
     },
