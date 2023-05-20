@@ -1,4 +1,4 @@
-// js 中的对象的使用
+// js 中的对象的使用，早期的版本创建 js 对象方式
 
 function range(from,to) {
     let r = Object.create(range.methods);
