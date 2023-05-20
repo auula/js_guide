@@ -19,7 +19,17 @@ range.methods = {
     },
 
     // 返回字符串方法
-    toString() {return "(" + this.from + "..." + this.to + ")";}
+    toString() {
+        let str = "[";
+        for (let i = this.from; i <= this.to; i++) {
+            str += i
+            if (i != this.to) {
+                str += ","
+            }
+        }
+        str += "]"
+        return str;
+    }
 }
 
 let r = range(1,10);
