@@ -27,7 +27,7 @@ range.methods = {
         }
         str += "]"
         return str;
-    }
+    },
 }
 
 let r = range(1,10);
