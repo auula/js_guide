@@ -32,8 +32,11 @@ range.methods = {
 
 let r = range(1,10);
 
+// 检查某个元素是否存在
 console.log(r.includes(2));
 
+// 返回所有的元素字符串
 console.log(r.toString());
 
+// 拆解所有元素
 console.log([...r]);
