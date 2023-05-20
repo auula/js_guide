@@ -1,6 +1,7 @@
 // js 中的对象的使用，早期的版本创建 js 对象方式
 
-// 类的构造函数
+// 类的构造函数，在没有 class 关键字版本实现，
+// es6 之前的版本兼容只能使用下面这种方式创建
 function range(from,to) {
     let r = Object.create(range.methods);
     r.from = from;
