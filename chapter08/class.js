@@ -8,11 +8,22 @@ function range(from,to) {
 }
 
 range.methods = {
+    // 检查某个值是否在范围内
     includes(x) {return this.from <= x && x <= this.to;},
 
+    // 设置迭代器
     *[Symbol.iterator]() {
         for(let x = Math.ceil(this.from);x <= this.to;x++) yield x;
     },
 
+    // 返回字符串方法
     toString() {return "(" + this.from + "..." + this.to + ")";}
 }
+
+let r = range(1,10);
+
+console.log(r.includes(2));
+
+console.log(r.toString());
+
+console.log([...r]);
