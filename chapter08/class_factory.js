@@ -30,8 +30,14 @@ Range.prototype = {
 // 此种构造函数必须 new 关键字来创建
 let r = new Range(1,10);
 
+// true 
 console.log(r.includes(2));
 
+// (1...10)
 console.log(r.toString());
 
+// [
+//     1, 2, 3, 4,  5,
+//     6, 7, 8, 9, 10
+// ]
 console.log([...r]);
