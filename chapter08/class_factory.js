@@ -26,8 +26,8 @@ Range.prototype = {
 
 // js 中如果一个函数默认是以大写字母开头，
 // 运行时则会认为是构造函数，会主动初始化 this 关键字，
-// 不像之前的版本要使用 Object.create() 函数来创建
-// 此种构造函数必须 new 关键字来创建
+// 不像之前的版本要使用 Object.create() 函数来创建，
+// 此种构造函数必须 new 关键字来创建。
 let r = new Range(1,10);
 
 // true 
