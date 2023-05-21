@@ -25,7 +25,7 @@ range.methods = {
     toString() {
         let str = "[";
         for (let i = this.from; i <= this.to; i++) {
-            str += i
+            str += i;
             if (i != this.to)  str += ",";
         }
         str += "]";
