@@ -43,3 +43,8 @@ console.log(r.toString());
 
 // 拆解所有元素
 console.log([...r]);
+
+// 通过 for of 进行遍历，对象只要实现了 *[Symbol.iterator]() 方法即可
+for (const v of r) {
+    console.log(v);
+}
