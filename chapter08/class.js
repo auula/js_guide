@@ -28,7 +28,7 @@ range.methods = {
             str += i
             if (i != this.to)  str += ",";
         }
-        str += "]"
+        str += "]";
         return str;
     },
 }
