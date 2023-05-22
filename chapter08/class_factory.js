@@ -17,8 +17,13 @@ Range.prototype = {
         for (let x = Math.ceil(this.from); x <= this.to; x++) yield x;
     },
 
-    // 返回范围的字符串表示
-    toString: () => "(" + this.from + "..." + this.to + ")",
+    // 返回范围的字符串表示，箭头函数中的 this 是在定义函数时确定的，
+    // 它捕获了所在上下文的 this 值，并将其绑定到函数内部，无法通过 call()、apply() 或 bind() 来改变。
+    // toString: () => "(" + this.from + "..." + this.to + ")",
+
+    toString: function() {
+        return "(" + this.from + "..." + this.to + ")";
+    },
 }
 
 
