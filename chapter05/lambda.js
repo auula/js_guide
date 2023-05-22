@@ -5,6 +5,10 @@
 
 function Person(name) {
     this.name = name;
+    // 定义箭头函数，此种函数可以访问上下文中的 this
+    this.say = () => {
+        console.log("Hello, " + this.name);
+    };
 }
 
 // 这种箭头函数是无法访问上下文的
@@ -13,7 +17,7 @@ Person.prototype.sayHello = () => {
 };
 
 // 此种普通函数带有 prototype 原型属性，其他对象继承并且使用这个方法
-Person.prototype.sayHi = function() {
+Person.prototype.sayHi = function () {
     console.log("Hello, " + this.name);
 };
 
@@ -22,4 +26,6 @@ const person1 = new Person("John");
 person1.sayHello(); // 输出 "Hello, undefined"
 // 这种方式是可以的
 person1.sayHi();
-  
+// 因为在构造函数中创建的箭头函数是可以访问到上下文的 this 关键字
+person1.say();
+
