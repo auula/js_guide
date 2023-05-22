@@ -12,7 +12,7 @@ Person.prototype.sayHello = () => {
     console.log("Hello, " + this.name);
 };
 
-
+// 此种普通函数带有 prototype 原型属性，其他对象继承并且使用这个方法
 Person.prototype.sayHi = function() {
     console.log("Hello, " + this.name);
 };
