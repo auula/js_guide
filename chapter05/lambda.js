@@ -7,10 +7,19 @@ function Person(name) {
     this.name = name;
 }
 
-Person.prototype.sayHello = function() {
+// 这种箭头函数是无法访问上下文的
+Person.prototype.sayHello = () => {
     console.log("Hello, " + this.name);
 };
-  
+
+
+Person.prototype.sayHi = function() {
+    console.log("Hello, " + this.name);
+};
+
+
 const person1 = new Person("John");
-person1.sayHello(); // 输出 "Hello, John"
+person1.sayHello(); // 输出 "Hello, undefined"
+// 这种方式是可以的
+person1.sayHi();
   
