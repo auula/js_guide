@@ -18,9 +18,7 @@ Range.prototype = {
     },
 
     // 返回范围的字符串表示
-    toString: () => {
-        return "(" + this.from + "..." + this.to + ")";
-    }
+    toString: () => "(" + this.from + "..." + this.to + ")",
 }
 
 
