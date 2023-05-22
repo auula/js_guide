@@ -2,12 +2,12 @@
 
 function Person(name) {
     console.log(new.target);
-  }
+}
   
-  function Student(name) {
+function Student(name) {
     Person.call(this, name);
-  }
+}
   
-  var person1 = new Person("John"); // 输出 Person
-  var student1 = new Student("Alice"); // 输出 Student
+var person1 = new Person("John"); // 输出 Person
+var student1 = new Student("Alice"); // 输出 Student
   
