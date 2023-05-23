@@ -1,13 +1,32 @@
 // js 中传统构造函数，中属性 new.target 使用
 
-function Person(name) {
-    console.log(new.target);
+
+// https://www.bookstack.cn/read/es6-3rd/spilt.6.docs-class.md
+function Foo() {
+    if (!new.target) throw "Foo() must be called with new";
+    console.log("Foo instantiated with new");
 }
-  
-function Student(name) {
-    Person.call(this, name);
+
+Foo(); // throws "Foo() must be called with new"
+new Foo(); // logs "Foo instantiated with new"
+
+class A {
+    constructor() {
+        console.log(new.target.name);
+    }
 }
-  
-var person1 = new Person("John"); // 输出 Person
-var student1 = new Student("Alice"); // 输出 Student
-  
+
+class B extends A { constructor() { super(); } }
+
+var a = new A(); // logs "A"
+var b = new B(); // logs "B"
+
+class C { constructor() { console.log(new.target); } }
+class D extends C { constructor() { super(); } }
+
+var c = new C(); // logs class C{constructor(){console.log(new.target);}}
+var d = new D(); // logs class D extends C{constructor(){super();}}
+
+
+
+
