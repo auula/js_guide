@@ -38,3 +38,12 @@ let {length:len} = str;
 
 // 打印长度
 console.log(len);
+
+let arr = [10,100];
+
+// 在函数签名的行参上进行解构
+function sum([i,n]) {
+	console.log(i + n);
+}
+
+sum(arr);
