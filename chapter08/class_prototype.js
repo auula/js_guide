@@ -37,3 +37,13 @@ Range.prototype = {
 let r = new Range(1, 10);
 
 console.log(r instanceof Range);
+
+let v = Object.create(r);
+
+v.x = 100, v.y = 200;
+
+v["sum"] = function() {
+    console.log(this.x + this.y);
+}
+
+v.sum();
