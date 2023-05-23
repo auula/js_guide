@@ -48,3 +48,9 @@ console.log([...r]);
 for (const v of r) {
     console.log(v);
 }
+
+// 因为没有函数检查原型链
+console.log(range.methods.isPrototypeOf(r));
+
+// 因为 range 没有定义构造函数，所以不能直接使用 instanceof 所使用 
+console.log(r instanceof range);
