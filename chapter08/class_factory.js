@@ -44,3 +44,5 @@ console.log(r.toString());
 //     6, 7, 8, 9, 10
 // ]
 console.log([...r]);
+
+console.log(r instanceof Range);
