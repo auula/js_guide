@@ -49,7 +49,7 @@ for (const v of r) {
     console.log(v);
 }
 
-// 因为没有函数检查原型链
+// 因为没有此对象构造函数，所以使用此种方式检查原型链
 console.log(range.methods.isPrototypeOf(r));
 
 // 因为 range 没有定义构造函数，所以不能直接使用 instanceof 所使用 
