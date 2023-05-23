@@ -29,3 +29,12 @@ let {r,g,b} = color;
 console.log(color);
 
 console.log(r,g,b);
+
+
+let str = "Hello World";
+
+// 解构字符串的长度属性，并且重命名为 len
+let {length:len} = str;
+
+// 打印长度
+console.log(len);
