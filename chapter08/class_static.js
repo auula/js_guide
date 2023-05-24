@@ -16,7 +16,7 @@ class Person {
     }
 }
 
-let name = ["Leon",,] ?? "Leon Ding";
+let name = ["John",,] ?? "Leon Ding";
 
 // 静态构造方法
 let p = Person.create(name);
