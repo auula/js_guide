@@ -34,6 +34,7 @@ Range.prototype = {
     constructor: Range,
 }
 
+
 let r = new Range(1, 10);
 
 console.log(r instanceof Range);
@@ -42,8 +43,13 @@ let v = Object.create(r);
 
 v.x = 100, v.y = 200;
 
-v["sum"] = function() {
+v["sum"] = function () {
     console.log(this.x + this.y);
 }
 
 v.sum();
+
+
+for (const v of r) {
+    console.log(v);
+}

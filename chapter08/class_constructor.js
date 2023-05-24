@@ -28,6 +28,13 @@ class Range {
     };
 }
 
+//  自定义一个迭代器方法名字
+// Range.prototype[Symbol.iterator] = function* entries() {
+//     for (let x = Math.ceil(this.from); x <= this.to; x++) {
+//         yield x;
+//     }
+// };
+
 let rg = new Range(10,20);
 
 console.log(rg.includes(11));
