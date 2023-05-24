@@ -19,10 +19,8 @@ class Range {
     };
 
     *entries() {
-        for (let x = Math.ceil(this.from); x <= this.to;x++) {
-            yield x;
-        }
-    };
+        for (let x = Math.ceil(this.from); x <= this.to;x++) yield x;
+    }
 
     toString() {
         let str = "[";
