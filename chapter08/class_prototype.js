@@ -12,7 +12,7 @@ Range.prototype = {
     // 检查是否包含某个元素
     includes: function (x) { return this.from <= x && x <= this.to; },
 
-    // 只适用数值范围
+    // 只适用数值范围，类似于 Go 语言中的通道传输消息
     [Symbol.iterator]: function* () {
         for (let x = Math.ceil(this.from); x <= this.to; x++) yield x;
     },
