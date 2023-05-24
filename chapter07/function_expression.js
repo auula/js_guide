@@ -15,7 +15,7 @@ console.log(s);
 let t = function(x){return x * x}(10);
 console.log(t);
 
-// lambda 表达式方式实现函数
+// arrow 表达式方式实现函数
 let sum = (x,y) => {return x + y};
 console.log(sum(10,10));
 
