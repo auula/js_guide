@@ -11,7 +11,14 @@ class Range {
 
     includes(x) {return this.from <= x && x <= this.to};
     
+    // 这样写是为支持 [...] 扩张结构语法糖
     *[Symbol.iterator]() {
+        for (let x = Math.ceil(this.from); x <= this.to;x++) {
+            yield x;
+        }
+    };
+
+    *entries() {
         for (let x = Math.ceil(this.from); x <= this.to;x++) {
             yield x;
         }
@@ -43,6 +50,9 @@ console.log(rg.toString());
 
 console.log([...rg]);
 
+for (const v of rg.entries()){
+    console.log(v);
+}
 
 // true
 // [10,11,12,13,14,15,16,17,18,19,20]
