@@ -4,7 +4,7 @@
 // let square = Square(x);
 
 let Square = class {
-
+    // 此种方式创建的 class 对象名称由外部定义
     constructor(x) {
         this.area = x;
     };
