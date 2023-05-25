@@ -23,7 +23,7 @@ class Buffer {
             capacity = ${this.#capacity};
             buf = ${this.#buf};
         }`;
-    }
+    };
 }
 
 // 会有隐私的构造函数进行
