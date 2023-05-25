@@ -15,7 +15,7 @@ class Buffer {
     set add(v) {
         this.#buf[this.#size] = v;
         this.#size++;
-    }
+    };
 
     toString() {
         return `Buffer {
