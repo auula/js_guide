@@ -12,12 +12,12 @@ class Complex {
     }
 
     plus(that) {
-        return new Complex(this.r + this.#r,this.i + this.#i);
+        return new Complex(this.r + that.#r,this.i + that.#i);
     }
 
     times(that) {
-        return new Complex(this.r * this.#r - this.#i + this.#i,
-            this.#r * this.#i - this.#i * this.#r    
+        return new Complex(this.r * that.#r - this.#i + that.#i,
+            this.#r * that.#i - this.#i * that.#r    
         )
     }
 
