@@ -20,7 +20,7 @@ class Buffer {
 
     // 返回 buf 方法返回元素
     get buf() {
-        return this.#buf  
+        return this.#buf;  
     };
 
     toString() {
@@ -46,6 +46,8 @@ console.log(bf.toString());
 
 
 // 为已经有的 class 扩张添加方法
+// 这种方式添加新的属性时必须注意不要把以前已存在属性覆盖掉
+// 或者新版本的原型对象新添加了同名的属性，就会覆盖掉这个属性
 Buffer.prototype.contains = function(v) {
     for (let i = 0; i < this.size; i++) {
         if (this.buf[i] === v) {
