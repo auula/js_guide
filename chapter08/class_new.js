@@ -12,9 +12,15 @@ class Buffer {
         return this.#size;
     };
 
+    // 只能通过 add 方法添加元素
     set add(v) {
         this.#buf[this.#size] = v;
         this.#size++;
+    };
+
+    // 返回 buf 方法返回元素
+    get buf() {
+        return this.#buf  
     };
 
     toString() {
@@ -37,3 +43,16 @@ console.log(bf.size);
 
 // 打印初始化的 bf 对象
 console.log(bf.toString());
+
+
+// 为已经有的 class 扩张添加方法
+Buffer.prototype.contains = function(v) {
+    for (let i = 0; i < this.size; i++) {
+        if (this.buf[i] === v) {
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log(bf.contains(20));
