@@ -8,8 +8,8 @@ class TypedMap extends Map {
         if (entries) {
             // 遍历传入的 entries 键值对
             for (let [k,v] of entries) {
-                if (typeof k !== keyType || typeof v !== valueType) {
-                    throw new TypeError(`Wrong type for enrty [${k},${v}]`);
+                if (!(k instanceof keyType) || !(v instanceof valueType)) {
+                    throw new TypeError(`Wrong type for entry [${k},${v}]`);
                 }
             }
         }
@@ -24,13 +24,15 @@ class TypedMap extends Map {
 
     set(key,value) {
 
-        if (this.keyType || typeof key != this.keyType) {
-            throw new TypeError(`${key} is not type ${keyType}`);
-        }
-
-        if (this.valueType || typeof value != this.valueType) {
-            throw new TypeError(`${value} is not type ${this.valueType}`);
-        }
+        if (!(key instanceof this.keyType)) {
+            throw new TypeError(`${key} is not of type ${this.keyType.name}`);
+          }
+      
+          if (!(value instanceof this.valueType)) {
+            throw new TypeError(`${value} is not of type ${this.valueType.name}`);
+          }
+      
+          return super.set(key, value);
 
         // 类型检查通过之后使用父类的方法设置
         return super.set(key,value);
