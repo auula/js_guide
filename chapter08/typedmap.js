@@ -38,7 +38,7 @@ class TypedMap extends Map {
 
 }
 
-const myMap = new TypedMap(String, Number, [
+const myMap = new TypedMap('string', 'number', [
     ['key1', 1],
     ['key2', 2],
 ]);
