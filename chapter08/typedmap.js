@@ -24,11 +24,11 @@ class TypedMap extends Map {
 
     set(key, value) {
 
-        if (this.keyType || typeof key !== this.keyType) {
+        if (this.keyType && typeof key !== this.keyType) {
             throw new TypeError(`${key} is not of type ${this.keyType.name}`);
         }
 
-        if (this.valueType || typeof value !== this.valueType) {
+        if (this.valueType && typeof value !== this.valueType) {
             throw new TypeError(`${value} is not of type ${this.valueType.name}`);
         }
 
