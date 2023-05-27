@@ -1,5 +1,8 @@
 // js 中的所有参数没有类型限制，在作为参数使用的一定要注意
 
+
+// Typed Map 为原生的 Map 的子类
+// 相比 Map 他支持参数类型检查功能，和元素类型限制功能
 class TypedMap extends Map {
 
     // 构造函数
