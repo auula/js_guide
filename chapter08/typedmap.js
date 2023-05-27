@@ -14,7 +14,7 @@ class TypedMap extends Map {
             }
         }
 
-        // 类型检查通过之后，调用父类的
+        // 类型检查通过之后，调用父类的，在此之前不能使用 this 关键字
         super(entries);
 
         // 保持初始化的类型学校
