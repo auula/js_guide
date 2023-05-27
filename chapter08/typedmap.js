@@ -3,11 +3,11 @@
 class TypedMap extends Map {
 
     // 构造函数
-    constructor(keyType,valueType,entries){
+    constructor(keyType, valueType, entries) {
         // 是否有值，有值则进去
         if (entries) {
             // 遍历传入的 entries 键值对
-            for (let [k,v] of entries) {
+            for (let [k, v] of entries) {
                 if (!(k instanceof keyType) || !(v instanceof valueType)) {
                     throw new TypeError(`Wrong type for entry [${k},${v}]`);
                 }
@@ -22,20 +22,18 @@ class TypedMap extends Map {
         this.valueType = valueType;
     }
 
-    set(key,value) {
+    set(key, value) {
 
         if (!(key instanceof this.keyType)) {
             throw new TypeError(`${key} is not of type ${this.keyType.name}`);
-          }
-      
-          if (!(value instanceof this.valueType)) {
+        }
+
+        if (!(value instanceof this.valueType)) {
             throw new TypeError(`${value} is not of type ${this.valueType.name}`);
-          }
-      
-          return super.set(key, value);
+        }
 
         // 类型检查通过之后使用父类的方法设置
-        return super.set(key,value);
+        return super.set(key, value);
     }
 
 }
