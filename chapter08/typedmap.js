@@ -20,7 +20,7 @@ class TypedMap extends Map {
         // 类型检查通过之后，调用父类的，在此之前不能使用 this
         super(entries);
 
-        // 保持初始化的类型学校
+        // 保持初始化的类型子类
         this.keyType = keyType;
         this.valueType = valueType;
     }
