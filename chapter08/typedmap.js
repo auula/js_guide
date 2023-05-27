@@ -5,6 +5,9 @@
 // 相比 Map 他支持参数类型检查功能，和元素类型限制功能
 class TypedMap extends Map {
 
+    #keyType = "";
+    #valueType = "";
+
     // 构造函数
     constructor(keyType, valueType, entries) {
         // 是否有值，有值则进去
