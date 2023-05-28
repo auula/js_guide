@@ -72,3 +72,7 @@ m.add("JavaScript");
 console.log(m.count("Java"));
 console.log(m.count("😀"));
 console.log(m.has("Java"));
+
+// 因为不是 Map 类型的实现，所以 false
+// Histogram 不是 Map 子类
+console.log(m instanceof Map);
