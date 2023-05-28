@@ -63,7 +63,12 @@ let m = new Histogram();
 m.add("Java");
 m.add("Java");
 m.add("Go");
+m.add("😀");
+m.add("😀");
+m.add("😀");
+m.add("😀");
 m.add("JavaScript");
 
 console.log(m.count("Java"));
+console.log(m.count("😀"));
 console.log(m.has("Java"));
