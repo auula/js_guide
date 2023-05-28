@@ -26,7 +26,7 @@ class Histogram {
 
     // 为某个键加一操作
     add(key) {
-        return this.map.set(ket,this.count(key) + 1);
+        return this.map.set(key,this.count(key) + 1);
     }
 
     delete(key) {
@@ -56,3 +56,14 @@ class Histogram {
         return this.map.entries();
     }
 }
+
+let m = new Histogram();
+
+
+m.add("Java");
+m.add("Java");
+m.add("Go");
+m.add("JavaScript");
+
+console.log(m.count("Java"));
+console.log(m.has("Java"));
