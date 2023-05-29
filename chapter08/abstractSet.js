@@ -17,7 +17,7 @@ class AbstractSet {
 }
 
 
-let aset = new AbstractSet();
+// let aset = new AbstractSet();
 
 class MySet extends AbstractSet  {
     // 私有的 set 成员
