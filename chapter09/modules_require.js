@@ -8,6 +8,7 @@ function require(mod) {
     return modules[mod];
 }
 
+// 为 modules 对象设置一个 sets.js 属性
 modules["sets.js"] = (function() {
     // 要导出的模块属性对象
     const exports = {};
@@ -19,7 +20,7 @@ modules["sets.js"] = (function() {
     return exports;
 }());
 
-
+// 为 modules 对象设置一个 math.js 属性
 modules["math.js"] = (function(){
     const exports = {};
 
