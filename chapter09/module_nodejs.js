@@ -7,19 +7,19 @@
 // 默认上空的
 console.log(module.exports);
 
-exports.sayhi = () => {console.log("Hello Node.JS")};
+exports.sayhi = () => { console.log("Hello Node.JS") };
 
 // Hello Node.JS
 exports.sayhi();
 
-const square = function(x) {
+const square = function (x) {
     return x * x;
-} 
+}
 
-const sum = (x,y) => {return x + y;}
+const sum = (x, y) => { return x + y; }
 
 
 // 可以通过 module.exports 进行调用
-module.exports = {square,sum};
+module.exports = { square, sum };
 
-console.log(module.exports.square(10),module.exports.sum(2,3));
+console.log(module.exports.square(10), module.exports.sum(2, 3));
