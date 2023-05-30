@@ -59,7 +59,6 @@ class Histogram {
 
 let m = new Histogram();
 
-
 m.add("Java");
 m.add("Java");
 m.add("Go");

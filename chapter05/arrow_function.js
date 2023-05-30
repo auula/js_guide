@@ -5,7 +5,7 @@
 
 function Person(name) {
     this.name = name;
-    // 定义箭头函数，此种函数可以访问上下文中的 this
+    // 定义箭头函数，此种函数可以访问上下文中的 this，一般为上层的 this 对象
     this.say = () => {
         console.log("Hello, " + this.name);
     };
@@ -28,4 +28,6 @@ person1.sayHello(); // 输出 "Hello, undefined"
 person1.sayHi();
 // 因为在构造函数中创建的箭头函数是可以访问到上下文的 this 关键字
 person1.say();
+
+
 
