@@ -12,4 +12,13 @@ exports.sayhi = () => {console.log("Hello Node.JS")};
 // Hello Node.JS
 exports.sayhi();
 
+const square = function(x) {
+    return x * x;
+} 
 
+const sum = (x,y) => {return x + y;}
+
+module.exports = {square,sum};
+
+
+console.log(square(10),sum(2,3));
