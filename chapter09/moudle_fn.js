@@ -24,5 +24,9 @@ var moduleB = (function () {
     return [print];
 })();
 
+
+// 默认返回的 toDo 函数可以直接使用，因为暴露出来了
+moduleA.toDo();
+
 // 因为返回的是元祖，所以使用下标进行访问
 moduleB[0];
