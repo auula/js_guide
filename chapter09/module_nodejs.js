@@ -19,7 +19,8 @@ const square = function (x) {
 const sum = (x, y) => { return x + y; }
 
 
-// 可以通过 module.exports 进行调用
+// 可以通过 module.exports 设置对象进行导出
 module.exports = { square, sum };
 
+// 可以使用 module.exports 进行导入使用
 console.log(module.exports.square(10), module.exports.sum(2, 3));
