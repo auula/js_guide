@@ -18,7 +18,8 @@ const square = function(x) {
 
 const sum = (x,y) => {return x + y;}
 
-module.exports = {square,sum};
 
+// 可以通过 module.exports 进行调用
+module.exports = {square,sum};
 
 console.log(module.exports.square(10),module.exports.sum(2,3));
