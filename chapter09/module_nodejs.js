@@ -21,4 +21,4 @@ const sum = (x,y) => {return x + y;}
 module.exports = {square,sum};
 
 
-console.log(square(10),sum(2,3));
+console.log(module.exports.square(10),module.exports.sum(2,3));
