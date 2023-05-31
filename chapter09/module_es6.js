@@ -7,14 +7,16 @@ function desgreesToRadians(d) {
 };
 
 class Circle {
+    
     // 构造函数
     constructor(r) {
         this.r = r;
-    }
+    };
+
     area() {
         return PI * this.r * this.r;
-    }
-}
+    };
+};
 
 // 批量导出模块内部的变量和函数，看着像是对象，其实为简写。
-export {Circle,desgreesToRadians,PI}
+export {Circle,desgreesToRadians,PI};
