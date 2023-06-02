@@ -12,20 +12,20 @@ export default class Person {
 
     // 默认的构造器
     constructor(name,age) {
-        this.name = name;
-        this.age = age;
+        this.#name = name;
+        this.#age = age;
     }
 
     get name() {
-        return this.name;
+        return this.#name;
     };
 
     get age() {
-        this.name = age;
+        this.#name = age;
     }
 
     toString() {
-        return "Hi! i am ${this.#name} , age is ${this.#age} .";
+        return `Hi! i am ${this.#name} , age is ${this.#age} .`;
     }
 
 }
