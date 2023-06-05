@@ -39,3 +39,16 @@ console.log(map.size);
 console.log(map.get("two"));
 
 
+// js 作为一种没有严格编程限制的语言，在 Map 类型中可以使用 null 、undefind 、NaN 类型作为键
+
+let sm = new Map([
+    [{},1],
+    [{},2],
+    [{},3],
+]);
+
+sm.set(sm,undefined);
+
+console.log(sm);
+
+
