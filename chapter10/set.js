@@ -89,6 +89,6 @@ console.log([...s].flat(1));
 s.add([1,2,3,4,5,6,7,8].map( v => { return v * 2}));
 
 // 打印 s 集合中的第一个元素的所有元素，在 js 中 Set 插入元素顺序是保存的，遍历也是按照顺序来的
-[...s][0].flat(1).forEach(ele => {
+[...s][0].forEach(ele => {
     console.log(ele);
 });
