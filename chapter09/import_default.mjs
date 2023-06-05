@@ -3,8 +3,10 @@
 // 默认导出的语法如下所示：export default expression;
 // 这里的 expression 可以是任何有效的 JavaScript 表达式。
 
-import Person from './export_default.mjs';
 
-const person = new Person('John', 25);
+// 在导入时，可以为默认导出指定任何名称。例如：
+import people from './export_default.mjs';
+
+const person = new people('John', 25);
 
 console.log(person.toString());
