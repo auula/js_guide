@@ -52,7 +52,7 @@ sm.set(sm,undefined);
 console.log(sm);
 
 // 同样是无法删除的
-
 sm.delete({});
+console.log(sm.get({}));
 
 console.log(sm);
