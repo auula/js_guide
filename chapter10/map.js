@@ -25,6 +25,17 @@ n.forEach(v => {
 // 通过解构的方式来实现遍历
 for (const [k,v] of n.entries()) {
     console.log(k,v);
-}
+};
+
+let map = new Map([
+    ["one","1"],
+    ["two","2"],
+]);
+
+// 获取 map 的大小
+console.log(map.size);
+
+// 获取某个键的值
+console.log(map.get("two"));
 
 
