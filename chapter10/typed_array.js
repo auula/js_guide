@@ -61,3 +61,8 @@ legal[0] = 300;
 
 console.log(legal[0] === 255);
 
+// 从另外一个可迭代数组中得到一个新类型数组，类型不匹配会默认转换
+let ints = Uint32Array.from(legal);
+
+console.log(ints);
+
