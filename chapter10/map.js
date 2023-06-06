@@ -56,3 +56,20 @@ sm.delete({});
 console.log(sm.get({}));
 
 console.log(sm);
+
+
+// Map 是可以迭代的，每个元素都是一个元素位为 2 位的数组
+let m2 = new Map([["x",1],["y",2]]);
+
+// 可迭代 Map
+for (const [key,value] of m2) {
+    console.log(key,value);
+}
+
+// 键名
+console.log([...m2.keys()]);
+// 值名
+console.log([...m2.values()]);
+// 键和元素名
+console.log([...m2.entries()]);
+
