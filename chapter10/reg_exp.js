@@ -6,6 +6,7 @@
 // 是否以 s 结尾
 let pattern = new RegExp("s$");
 
+// true 确实以 s 结尾
 console.log(pattern.test("alias"));
 
 
