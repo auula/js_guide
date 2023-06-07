@@ -18,3 +18,7 @@ const value = dataView.getInt16(0);
 
 // 输出: 100
 console.log(value); 
+
+dataView.setInt16(5,200,false);
+
+console.log(dataView);
