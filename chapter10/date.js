@@ -16,7 +16,6 @@ let epoch = new Date(0);
 console.log(epoch);
 
 // 默认使用 Date 构造函数创建的日期对象为本机设置的对应的时区
-
 let utc = new Date(Date.UTC(2023,6-1,8));
 
 console.log(utc);
