@@ -10,3 +10,8 @@ console.log(now);
 let century = new Date(2023,(6-1),8,15,16,04,2);
 
 console.log(century);
+
+// 如果在构造函数传入 0 那么创建的新日期对象会从 1970 年 1 月 1 日 0 时开始
+let epoch = new Date(0);
+
+console.log(epoch);
