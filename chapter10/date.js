@@ -20,20 +20,4 @@ let utc = new Date(Date.UTC(2023, 6 - 1, 8));
 
 console.log(utc);
 
-// 一个匹配 url 的正则
-let url = "/(/w+):\/\/([\w.]+)\/(\S*)/";
-
-let text = "My Blog at https://ibyte.me";
-
-let match = text.match(url);
-
-let fullurl, protocol, host, path;
-
-if (match !== null) {
-    fullurl = match[0];
-    protocol = match[1];
-    host = match[2];
-    path = match[3];
-}
-
 
