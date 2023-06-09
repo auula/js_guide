@@ -17,3 +17,7 @@ console.log(count);
 
 // -1
 console.log("Java".search(/script/ui));
+
+const str = "JavaScript";
+
+console.log(str.replace("Java","Type"));
