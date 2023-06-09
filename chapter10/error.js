@@ -5,12 +5,12 @@
 
 let err = new Error("common type error.");
 
-console.log(err.message,err.name);
+console.log(err.message, err.name);
 
 
 // 自定义一个错误，可以使用 extens 来继承实现
 class HTTPError extends Error {
-    constructor(status,statusText,url) {
+    constructor(status, statusText, url) {
         super('${status} ${statusText} ${url}.')
         this.status = status;
         this.statusText = statusText;
@@ -26,6 +26,6 @@ class HTTPError extends Error {
     }
 }
 
-let herr = new HTTPError(404,"Not Found","http://google.com");
+let herr = new HTTPError(404, "Not Found", "http://google.com");
 
 console.log(herr.toString());
