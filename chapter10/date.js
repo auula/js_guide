@@ -20,4 +20,12 @@ let utc = new Date(Date.UTC(2023, 6 - 1, 8));
 
 console.log(utc);
 
+// 字符串输出日期
+console.log(utc.toString());
+
+// 转换为 UTC 时间字符串
+console.log(utc.toUTCString());
+
+// 转换为 ISO 时间字符串
+console.log(utc.toISOString());
 
