@@ -8,7 +8,7 @@
 
 // s 表示搜索文本包括换行符
 
-// u 表示匹配完整的 unicode 码点 UTF-16 编码
+// u 表示匹配完整的 Unicode 码点 UTF-16 编码
 
 let count = "JavaScript".search(/script/ui);
 
