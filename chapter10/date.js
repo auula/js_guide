@@ -6,7 +6,7 @@ console.log(now);
 
 // 可以通过 Date() 构造函数创建一个指定日期的对象
 // 2023 年 6 - 1 月 8 日 15 点 16 分 04 秒 2 微妙
-let century = new Date(2023,(6-1),8,15,16,04,2);
+let century = new Date(2023, (6 - 1), 8, 15, 16, 04, 2);
 
 console.log(century);
 
@@ -16,6 +16,24 @@ let epoch = new Date(0);
 console.log(epoch);
 
 // 默认使用 Date 构造函数创建的日期对象为本机设置的对应的时区
-let utc = new Date(Date.UTC(2023,6-1,8));
+let utc = new Date(Date.UTC(2023, 6 - 1, 8));
 
 console.log(utc);
+
+// 一个匹配 url 的正则
+let url = "/(/w+):\/\/([\w.]+)\/(\S*)/";
+
+let text = "My Blog at https://ibyte.me";
+
+let match = text.match(url);
+
+let fullurl, protocol, host, path;
+
+if (match !== null) {
+    fullurl = match[0];
+    protocol = match[1];
+    host = match[2];
+    path = match[3];
+}
+
+
