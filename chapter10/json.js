@@ -46,3 +46,14 @@ with (dist) {
 let s = JSON.stringify(dist, null, '\t');
 
 console.log(s);
+
+// 复活函数针对是 JSON 字符串，反序列化为对象时，使用自定义函数，可以自定义处理对象每个字段
+let data = JSON.parse(s,(key,value) => {
+    if (key == "isMan") {
+        // 改变性别，取反
+        return value ? false : true; 
+    }
+    return value;
+})
+
+console.log(data);
