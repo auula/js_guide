@@ -26,6 +26,17 @@ console.log(data.map(formatData));
 // 日期国际的 API 
 let d = new Date("2023-06-10T13:14:15Z");
 
-let ed = Intl.DateTimeFormat("en-US").format(d);
 
-console.log(ed);
+// 通过地区代码来获取对应时区的日期格式
+let time = Intl.DateTimeFormat("en-US").format(d);
+// 6/10/2023
+console.log(time);
+
+// 日期格式可以指定对应的选项
+let opts = {weekday:"long",month:"long",year:"numeric",day:"numeric"};
+
+// 传入选项
+let long_date = Intl.DateTimeFormat("en-US",opts).format(d);
+
+// Saturday, June 10, 2023
+console.log(long_date);
