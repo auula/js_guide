@@ -54,6 +54,6 @@ let data = JSON.parse(s,(key,value) => {
         return value ? false : true; 
     }
     return value;
-})
+});
 
 console.log(data);
