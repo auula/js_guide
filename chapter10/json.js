@@ -1,9 +1,9 @@
 // js 中的对象类型正反序列化教程
 
 let o = {
-    name : "Leon",
+    name: "Leon",
     age: "24",
-    skill: ["Java","Clang","Go","Rust","JS"],
+    skill: ["Java", "Clang", "Go", "Rust", "JS"],
     isMan: true,
 }
 
@@ -16,7 +16,7 @@ console.log(str);
 
 let person = JSON.parse(str);
 
-with(person) {
+with (person) {
     console.log(name);
     console.log(age);
     console.log(...skill);
@@ -35,9 +35,14 @@ let dist = deepcopy(person);
 // 比较一下说明是两个不同地址，说明深度复制成功
 console.log(dist === person);
 
-with(dist) {
+with (dist) {
     console.log(name);
     console.log(age);
     console.log(...skill);
     console.log(isMan);
 }
+
+// 格式化一个漂亮的 JSON 字符串,制表符这样格式化之后更漂亮
+let s = JSON.stringify(dist, null, '\t');
+
+console.log(s);
