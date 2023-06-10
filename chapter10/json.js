@@ -64,3 +64,9 @@ let text = JSON.stringify(data,["skill","isMan"]);
 
 // {"skill":["Java","Clang","Go","Rust","JS"],"isMan":false}
 console.log(text);
+
+// 也可以指定一个函数来处理某个属性
+let json = JSON.stringify(o,(k,v) => v == "Rust" ? undefined : v);
+
+// {"name":"Leon","age":"24","skill":["Java","Clang","Go",null,"JS"],"isMan":true}
+console.log(json);
