@@ -62,4 +62,5 @@ console.log(data);
 // 并且会按照数组中的元素指定的字段顺序进行。
 let text = JSON.stringify(data,["skill","isMan"]);
 
+// {"skill":["Java","Clang","Go","Rust","JS"],"isMan":false}
 console.log(text);
