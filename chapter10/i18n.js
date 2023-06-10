@@ -21,3 +21,11 @@ let formatData = Intl.NumberFormat(undefined, {
 
 // [ '5.0%', '75.0%', '111.0%', '100.0%', '100.0%' ]
 console.log(data.map(formatData));
+
+
+// 日期国际的 API 
+let d = new Date("2023-06-10T13:14:15Z");
+
+let ed = Intl.DateTimeFormat("en-US").format(d);
+
+console.log(ed);
