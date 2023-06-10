@@ -57,3 +57,9 @@ let data = JSON.parse(s,(key,value) => {
 });
 
 console.log(data);
+
+// 指定哪些字段需要被序列化，没有被列入到数组中字段会被排除掉，
+// 并且会按照数组中的元素指定的字段顺序进行。
+let text = JSON.stringify(data,["skill","isMan"]);
+
+console.log(text);
