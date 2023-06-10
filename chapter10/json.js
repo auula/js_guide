@@ -42,7 +42,7 @@ with (dist) {
     console.log(isMan);
 }
 
-// 格式化一个漂亮的 JSON 字符串,制表符这样格式化之后更漂亮
+// 格式化一个漂亮的 JSON 字符串，制表符这样格式化之后更漂亮
 let s = JSON.stringify(dist, null, '\t');
 
 console.log(s);
