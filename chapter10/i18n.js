@@ -33,10 +33,10 @@ let time = Intl.DateTimeFormat("en-US").format(d);
 console.log(time);
 
 // 日期格式可以指定对应的选项
-let opts = {weekday:"long",month:"long",year:"numeric",day:"numeric"};
+let opts = { weekday: "long", month: "long", year: "numeric", day: "numeric" };
 
 // 传入选项
-let long_date = Intl.DateTimeFormat("en-US",opts).format(d);
+let long_date = Intl.DateTimeFormat("en-US", opts).format(d);
 
 // Saturday, June 10, 2023
 console.log(long_date);
