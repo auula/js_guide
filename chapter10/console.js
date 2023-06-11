@@ -32,4 +32,16 @@ const data = [
 console.table(data);
 
 // trace 和 log 一样，但是和会输出调用栈信息
-console.trace(data);
+// console.trace(data);
+
+
+// 是 JavaScript 中用于计数的方法，它可以帮助你追踪某个特定代码块被执行的次数。
+// 它接受一个可选的标签作为参数，并在控制台输出计数信息。
+function processItem(item) {
+    console.count('processItem');
+    // 处理项目的代码...
+}
+
+processItem('A');
+processItem('B');
+processItem('A');
