@@ -60,6 +60,7 @@ console.log(res);
 const versions = ["v1.1.1", "v1.0.1", "v1.8.2", "v2.0.0"];
 
 // 因为使用数字进行排序数组 numeric 为 ture
+// undefined 参数，该参数表示使用默认的语言环境进行比较。
 let compare_ver = new Intl.Collator(undefined, {
     numeric: true,
 }).compare;
