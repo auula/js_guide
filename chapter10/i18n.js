@@ -56,10 +56,12 @@ let res = ['a', "c", 'B', "A", "Z", "z"].sort(compare);
 // [ 'a', 'A', 'B', 'c', 'z', 'Z' ]
 console.log(res);
 
-const versions = ["v1.1.1","v1.0.1","v1.8.2","v2.0.0"];
+// 需要排序字符串中包含数字，版本号就为一个例子
+const versions = ["v1.1.1", "v1.0.1", "v1.8.2", "v2.0.0"];
 
-let compare_ver = new Intl.Collator(undefined,{
-    numeric:true,
+// 因为使用数字进行排序数组 numeric 为 ture
+let compare_ver = new Intl.Collator(undefined, {
+    numeric: true,
 }).compare;
 
 // [ 'v1.0.1', 'v1.1.1', 'v1.8.2', 'v2.0.0' ]
