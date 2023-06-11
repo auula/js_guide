@@ -45,3 +45,16 @@ function processItem(item) {
 processItem('A');
 processItem('B');
 processItem('A');
+
+// 字符串格式化输出
+const name = "John";
+const age = 30;
+const score = 78.5;
+const person = { name: "John", age: 30 };
+
+// 参数转换为字符串，转换为整数
+console.log("Name: %s, Age: %d", name, age);
+// 转换为数值，支持浮点数
+console.log("Score: %f", score);
+// 转换成为 o 对象的细节输出
+console.log("Person: %o", person);
