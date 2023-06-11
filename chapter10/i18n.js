@@ -40,3 +40,18 @@ let long_date = Intl.DateTimeFormat("en-US", opts).format(d);
 
 // Saturday, June 10, 2023
 console.log(long_date);
+
+
+// Intl.Collator 针对是字符串比较和内置对象的排序功能，
+// 它提供了对不同语言和区域设置的字符串进行排序和比较的功能。
+// 编程会面临很多不同国家的语言和文字，而这些国家的文字有着特定字母排序规则，
+// 所以可以使用 Intl.Collator 对不同字符和语言进行排序。
+
+// 使用空构造函数，会使用默认的排序方法
+const compare = new Intl.Collator().compare;
+
+// 会使用默认的用户地区对字符进行排序
+let res = ['a', "c", 'B', "A", "Z", "z"].sort(compare);
+
+// [ 'a', 'A', 'B', 'c', 'z', 'Z' ]
+console.log(res);

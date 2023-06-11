@@ -48,10 +48,10 @@ let s = JSON.stringify(dist, null, '\t');
 console.log(s);
 
 // 复活函数针对是 JSON 字符串，反序列化为对象时，使用自定义函数，可以自定义处理对象每个字段
-let data = JSON.parse(s,(key,value) => {
+let data = JSON.parse(s, (key, value) => {
     if (key == "isMan") {
         // 改变性别，取反
-        return value ? false : true; 
+        return value ? false : true;
     }
     return value;
 });
@@ -60,13 +60,13 @@ console.log(data);
 
 // 指定哪些字段需要被序列化，没有被列入到数组中字段会被排除掉，
 // 并且会按照数组中的元素指定的字段顺序进行。
-let text = JSON.stringify(data,["skill","isMan"]);
+let text = JSON.stringify(data, ["skill", "isMan"]);
 
 // {"skill":["Java","Clang","Go","Rust","JS"],"isMan":false}
 console.log(text);
 
 // 也可以指定一个函数来处理某个属性
-let json = JSON.stringify(o,(_,v) => v == "Rust" ? undefined : v);
+let json = JSON.stringify(o, (_, v) => v == "Rust" ? undefined : v);
 
 // {"name":"Leon","age":"24","skill":["Java","Clang","Go",null,"JS"],"isMan":true}
 console.log(json);
