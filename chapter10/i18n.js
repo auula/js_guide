@@ -67,3 +67,4 @@ let compare_ver = new Intl.Collator(undefined, {
 
 // [ 'v1.0.1', 'v1.1.1', 'v1.8.2', 'v2.0.0' ]
 console.log(versions.sort(compare_ver));
+
