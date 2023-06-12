@@ -30,3 +30,9 @@ for (const v of p) {
 let m = new Map([["one", 1],["two", 2]]);
 
 for (const [k,v] of m) console.log(k,v);
+
+// Map 内置一些方法是可以迭代的
+console.log([...m]);
+console.log([...m.entries()]);
+console.log([...m.keys()]);
+console.log([...m.values()]);
