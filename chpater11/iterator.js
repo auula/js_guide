@@ -36,3 +36,6 @@ console.log([...m]);
 console.log([...m.entries()]);
 console.log([...m.keys()]);
 console.log([...m.values()]);
+
+// 先创建一个 new Set 然后再解构
+console.log(...new Set("abc"));
