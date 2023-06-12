@@ -25,3 +25,8 @@ console.log(p.toString());
 for (const v of p) {
     console.log(v);
 }
+
+// Map 是可以迭代的
+let m = new Map([["one", 1],["two", 2]]);
+
+for (const [k,v] of m) console.log(k,v);
