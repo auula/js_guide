@@ -2,7 +2,7 @@
 
 class Range {
 
-    constructor(from,to) {
+    constructor(from, to) {
         this.from = from;
         this.to = to;
     }
@@ -13,6 +13,20 @@ class Range {
 
     [Symbol.iterator]() {
         let next = Math.ceil(this.from);
+        let last = this.to;
+        return {
+            // 闭包导出
+            next() {
+                // 闭包导出
+                return (next <= last)
+                    ? { value: next++ }
+                    : { done: true };
+            },
+        }
     }
+};
 
+
+for (const x of new Range(1, 10)) {
+    console.log(x);
 }
