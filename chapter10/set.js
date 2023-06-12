@@ -24,7 +24,7 @@ s.delete(true);
 console.log(s.size);
 
 // 清理所有元素
-s.clear()
+s.clear();
 
 console.log(s);
 
