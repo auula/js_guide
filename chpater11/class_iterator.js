@@ -29,7 +29,21 @@ class Range {
     }
 };
 
+let obj = new Range(1, 10)
 
-for (const x of new Range(1, 10)) {
+for (const x of obj) {
     console.log(x);
+}
+
+
+
+// 通过手动调用方法的形式实现对象迭代
+let iterator = obj[Symbol.iterator]();
+
+// 类似于 for 普通语句，
+// result = iterator.next() 确定第一个元素
+// !result.done 判断是否完成
+// 没有完成就继续取得下一个元素 result = iterator.next()
+for (let result = iterator.next(); !result.done; result = iterator.next()) {
+    console.log(result.value);
 }
