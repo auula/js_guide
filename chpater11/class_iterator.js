@@ -1,4 +1,4 @@
-// js 中的自定义对象的迭代器使用
+// js 中的自定义对象的迭代器使用，手动创建迭代器
 
 class Range {
 
@@ -11,6 +11,10 @@ class Range {
         return typeof x === "number" && this.from <= x && x <= this.to;
     }
 
+
+    // 必须严格按照这个来编写 Symbol.iterator
+    // 必须返回一个对象，对象拥有 next 方法
+    // next 方法返回一个可迭代对象，必须有 value/done 属性
     [Symbol.iterator]() {
         let next = Math.ceil(this.from);
         let last = this.to;
