@@ -27,9 +27,9 @@ for (const v of p) {
 }
 
 // Map 是可以迭代的
-let m = new Map([["one", 1],["two", 2]]);
+let m = new Map([["one", 1], ["two", 2]]);
 
-for (const [k,v] of m) console.log(k,v);
+for (const [k, v] of m) console.log(k, v);
 
 // Map 内置一些方法是可以迭代的
 console.log([...m]);
@@ -39,3 +39,15 @@ console.log([...m.values()]);
 
 // 先创建一个 new Set 然后再解构
 console.log(...new Set("abc"));
+
+let iterable = [99, 88, 77];
+
+let iterator = iterable[Symbol.iterator]();
+
+// 类似于 for 普通语句，
+// result = iterator.next() 确定第一个元素
+// !result.done 判断是否完成
+// 没有完成就继续取得下一个元素 result = iterator.next()
+for (let result = iterator.next(); !result.done; result = iterator.next()) {
+    console.log(result.value);
+}
