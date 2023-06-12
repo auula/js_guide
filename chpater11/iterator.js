@@ -2,10 +2,10 @@
 
 let sum = 0;
 
-let arr = [1,2,3,4,5];
+let arr = [1, 2, 3, 4, 5];
 
 // 数组是可以迭代的
-for(const i of arr) {
+for (const i of arr) {
     sum += i;
 }
 

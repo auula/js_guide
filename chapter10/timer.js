@@ -10,9 +10,9 @@ let cycle_clock = setInterval(() => {
     console.clear();
     // 打印时间
     console.log(new Date().toLocaleTimeString());
-},1000); 
+}, 1000);
 
 // 1 分钟之后停止
 setTimeout(() => {
     clearInterval(cycle_clock);
-},1000 * 60 * 1);
+}, 1000 * 60 * 1);
