@@ -42,6 +42,7 @@ console.log(...new Set("abc"));
 
 let iterable = [99, 88, 77];
 
+// 可迭代的对象没有一个统一可迭代属性，所以这里使用 Symbol.iterator
 let iterator = iterable[Symbol.iterator]();
 
 // 类似于 for 普通语句，
