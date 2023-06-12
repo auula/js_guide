@@ -5,7 +5,9 @@
 // 这些情况此时如果要正确使用迭代器必须自己实现对象的 return 方法
 
 const myObject = {
+
     data: ['a', 'b', 'c'],
+
     [Symbol.iterator]() {
         let currentIndex = 0;
         return {
