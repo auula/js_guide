@@ -39,6 +39,8 @@ for (const x of obj) {
     console.log(x);
 }
 
+// 是否包含某个元素
+console.log(obj.has(10));
 
 // 通过手动调用方法的形式实现对象迭代
 let iterator = obj[Symbol.iterator]();
