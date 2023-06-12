@@ -37,6 +37,8 @@ query.search = params;
 // https://www.google.com/search?q=term
 console.log(query.toString());
 
+// 可迭代的对象是可以解构的，[ 'q', 'term' ] 
+console.log(...params);
 
 
 
