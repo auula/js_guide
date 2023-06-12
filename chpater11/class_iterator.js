@@ -18,7 +18,7 @@ class Range {
         return {
             // 闭包导出
             next() {
-                // 闭包导出
+                // 闭包导出，返回一个可迭代对象必须有 value/done 属性
                 return (next <= last)
                     ? { value: next++ }
                     : { done: true };
