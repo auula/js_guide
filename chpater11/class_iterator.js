@@ -14,6 +14,7 @@ class Range {
     [Symbol.iterator]() {
         let next = Math.ceil(this.from);
         let last = this.to;
+        // 匿名对象有一个 next 方法表示可以迭代
         return {
             // 闭包导出
             next() {
