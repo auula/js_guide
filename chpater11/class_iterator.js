@@ -36,7 +36,6 @@ for (const x of obj) {
 }
 
 
-
 // 通过手动调用方法的形式实现对象迭代
 let iterator = obj[Symbol.iterator]();
 
