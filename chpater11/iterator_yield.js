@@ -30,7 +30,7 @@ for (let result = iterable.next(); !result.done; result = iterable.next()) {
 }
 
 let o = {
-    x:1,y:2,z:3,
+    x: 1, y: 2, z: 3,
     *g() {
         for (let key of Object.keys(this)) {
             yield key;
@@ -39,4 +39,22 @@ let o = {
 };
 
 console.log(...o.g());
+
+// 每个数字都是前两个数字之和。
+// 数列的起始数字通常是 0 和 1，然后后续的数字依次计算
+function* fibonacciSequence() {
+    let x = 0, y = 1;
+    while (1) {
+        // 先返回 y 
+        yield y;
+        // 然后交换位置
+        [x, y] = [y, x + y];
+    }
+};
+
+let item = fibonacciSequence();
+
+for (const value of item) {
+    console.log(value);
+}
 
