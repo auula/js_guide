@@ -8,6 +8,11 @@
 // 生成器通过 yield 返回值
 // 调用者通过 next 方法参数传值
 
+
+// 每次调用 next 方法时，会将传入的参数作为上一个 yield 表达式的结果，
+// 并使生成器函数继续执行，直到遇到下一个 yield 表达式或函数结束。
+// 生成器函数的返回值可以通过 value 属性获取，
+// 而 done 属性则表示生成器函数是否已经执行完毕。
 function* smallNumbers() {
     console.log("next() 第 1 次参数会被丢弃.");
     let y1 = yield 1;
