@@ -3,6 +3,7 @@
 
 // 生成器使用 yield 生成可迭代流
 // 必须使用 function 关键字和 * 定义
+// 每次只返回一个值
 function* fruit() {
     yield '🍉';
     yield '🍎';
@@ -60,7 +61,9 @@ let item = fibonacciSequence();
 // }
 
 
-// yield* 用于迭代可迭代对象
+// yield 只是返回右值，
+// 而 yield* 则将函数委托（delegate）到
+// 另一个生成器（ Generator）或可迭代的对象
 function* squenecA(...iterables) {
     for (let iterable of iterables) {
         for (let item of iterable) {
