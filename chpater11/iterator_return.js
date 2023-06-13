@@ -38,5 +38,3 @@ for (let item of myObject) {
 
 // 把对象扩展开
 console.log(...myObject);
-
-
