@@ -2,6 +2,7 @@
 // 而是计算结果的场景
 
 // 生成器使用 yield 生成可迭代流
+// 必须使用 function 关键字和 * 定义
 function* fruit() {
     yield '🍉';
     yield '🍎';
@@ -27,3 +28,15 @@ let iterable = fruit();
 for (let result = iterable.next(); !result.done; result = iterable.next()) {
     console.log(result.value);
 }
+
+let o = {
+    x:1,y:2,z:3,
+    *g() {
+        for (let key of Object.keys(this)) {
+            yield key;
+        }
+    }
+};
+
+console.log(...o.g());
+
