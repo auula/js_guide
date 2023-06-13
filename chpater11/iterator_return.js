@@ -34,7 +34,9 @@ for (let item of myObject) {
     if (item === 'b') {
         break;
     }
-}
+};
 
+// 把对象扩展开
+console.log(...myObject);
 
 
