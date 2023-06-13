@@ -45,7 +45,7 @@ console.log(...o.g());
 // 然后后续的数字依次计算。
 function* fibonacciSequence() {
     let x = 0, y = 1;
-    while (n <= 0) {
+    while (1) {
         // 先返回 y 
         yield y;
         // 然后交换位置
