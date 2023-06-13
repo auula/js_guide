@@ -25,7 +25,7 @@ function* smallNumbers() {
 }
 
 // 每取出一个元素，yield 都会控制代码停止，
-// 直到下一个 next 被取值才执行。
+// 直到下一个 next 被取值才执行，执行时是上次 next 传入参数作为起点
 let g = smallNumbers();
 
 // a 参数被丢弃了
