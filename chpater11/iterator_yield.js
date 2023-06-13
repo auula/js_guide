@@ -45,7 +45,7 @@ console.log(...o.g());
 // 然后后续的数字依次计算。
 function* fibonacciSequence() {
     let x = 0, y = 1;
-    while (1) {
+    while (n <= 0) {
         // 先返回 y 
         yield y;
         // 然后交换位置
@@ -55,7 +55,35 @@ function* fibonacciSequence() {
 
 let item = fibonacciSequence();
 
-for (const value of item) {
-    console.log(value);
+// for (const value of item) {
+//     console.log(value);
+// }
+
+
+// yield* 用于迭代可迭代对象
+function* squenecA(...iterables) {
+    for (let iterable of iterables) {
+        for (let item of iterable) {
+            for (let v of item) {
+                yield v;
+            }
+        }
+    }
 }
 
+function* squenecB(...iterables) {
+    for (let iterable of iterables) {
+        for (let item of iterable) {
+            // yield* 可以用于迭代可迭代对象并且返回其中的每一个值
+            yield* item;
+        }
+    }
+}
+
+let fruitsA = [fruit(), fruit(), fruit()];
+
+console.log("A:", ...squenecA(fruitsA));
+
+let fruitsB = [fruit(), fruit(), fruit()];
+
+console.log("B:", ...squenecB(fruitsB));
