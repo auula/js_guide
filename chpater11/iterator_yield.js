@@ -17,3 +17,13 @@ console.log(...fruit());
 for (const v of fruit()) {
     console.log(v);
 }
+
+// function* fruit() 会在运行时转换为一个生成器对象，
+// 这个对象和普通的可迭代对象类似，拥有 next 方法
+// next 的返回值为 yield 回传的值
+let iterable = fruit();
+
+// 通样可以使用原生的 for 循环进行迭代
+for (let result = iterable.next(); !result.done; result = iterable.next()) {
+    console.log(result.value);
+}
