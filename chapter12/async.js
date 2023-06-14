@@ -12,7 +12,7 @@ fs.readFile("chapter12/obj.json", "utf-8", (err, text) => {
         console.log("Could not read config file:", err);
     } else {
         // 否则解析文件的内容并赋值给选项对象
-        obj = Object.assign(obj, JSON.parse(text));
+        Object.assign(obj, JSON.parse(text));
         // { name: 'Leon', age: 24 }
         console.log(obj);
     }
