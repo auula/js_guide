@@ -17,12 +17,15 @@
 
 // 失败情景实例：
 const myPromise = new Promise((resolve, reject) => {
+    // 成功状态 resolve
     setTimeout(() => resolve('Hello world'), 1000);
+    // 失败状态
     setTimeout(() => reject('Ahh...'), 500);
 });
 
 // 
 myPromise.then(
+    // lambda 表达式执行
     (value) => console.log("执行成功结果：" + value),
     (error) => console.log("执行失败结果：" + error)
 );
