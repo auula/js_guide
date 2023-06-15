@@ -26,3 +26,12 @@ myPromise.then(
     (error) => console.log("执行失败结果：" + error)
 );
 
+// 使用一个周期性的定时器查看 Promise 对象状态的变化
+let cycle_clock = setInterval(() => {
+    console.log(myPromise);
+}, 100);
+
+// 当 Promise 执行完成之后关闭周期性定时器
+setTimeout(() => {
+    clearInterval(cycle_clock);
+}, 1000);
