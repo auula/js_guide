@@ -31,6 +31,7 @@ myPromise.then(
 );
 
 // 使用一个周期性的定时器查看 Promise 对象状态的变化
+// {[[PromiseStatus]]: "pending", [[PromiseValue]]: undefined}
 let cycle_clock = setInterval(() => {
     console.log(myPromise);
 }, 100);
