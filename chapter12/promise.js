@@ -21,6 +21,7 @@ const myPromise = new Promise((resolve, reject) => {
     setTimeout(() => reject('Ahh...'), 500);
 });
 
+// 
 myPromise.then(
     (value) => console.log("执行成功结果：" + value),
     (error) => console.log("执行失败结果：" + error)
