@@ -11,9 +11,9 @@
 // promise 最大好处是不用在回调函数里面嵌套其他回调函数，
 // 而是采用联试回调函数的方式进行调用，then 函数方法。
 
-// Promise 状态只能改变一次之后就固定
-// 所以在第 4 行，500毫秒一到，状态改变成 rejected 之后，就不能变动
-// 换言之第 3 行，setTime 里面的 resolve 就不会被执行
+// Promise 状态只能改变一次之后就固定，
+// 所以在第 4 行，500毫秒一到，状态改变成 rejected 之后，就不能变动，
+// 换言之第 3 行，setTime 里面的 resolve 就不会被执行。
 
 // 失败情景实例：
 const myPromise = new Promise((resolve, reject) => {
