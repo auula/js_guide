@@ -19,7 +19,7 @@
 const myPromise = new Promise((resolve, reject) => {
     // 成功状态 resolve
     setTimeout(() => resolve('Hello world'), 1000);
-    // 失败状态
+    // 失败状态 reject
     setTimeout(() => reject('Ahh...'), 500);
 });
 
