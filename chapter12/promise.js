@@ -23,7 +23,7 @@ const myPromise = new Promise((resolve, reject) => {
     setTimeout(() => reject('Ahh...'), 500);
 });
 
-// 
+// 采用 then 链式调用的方式
 myPromise.then(
     // lambda 表达式执行
     (value) => console.log("执行成功结果：" + value),
