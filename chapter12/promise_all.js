@@ -4,11 +4,11 @@ const promise1 = Promise.resolve(3);
 
 const promise2 = 42;
 
-const promise3 = new Promise((resolve, reject) => {
+const promise3 = new Promise((resolve, _) => {
     setTimeout(resolve, 3000, 'foo');
 });
 
-const promise4 = new Promise((resolve, reject) => {
+const promise4 = new Promise((resolve, _) => {
     setTimeout(resolve("promise4"), 1000);
 });
 
