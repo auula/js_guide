@@ -32,6 +32,7 @@ myPromise.then(
 
 // 使用一个周期性的定时器查看 Promise 对象状态的变化
 // {[[PromiseStatus]]: "pending", [[PromiseValue]]: undefined}
+// Promise 的状态时线性状态，从一个状态到下一个状态，但是不能交叉状态转换
 let cycle_clock = setInterval(() => {
     console.log(myPromise);
 }, 100);
