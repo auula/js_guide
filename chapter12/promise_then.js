@@ -4,7 +4,7 @@
 const myPromise = new Promise(
     // 这两个参数为函数
     (resolve, reject) => {
-        setTimeout(resolve("execute success."), 2000);
+        setTimeout(resolve("execute success."), 1000);
         setTimeout(reject("execute failure."), 1000);
     }
 );
