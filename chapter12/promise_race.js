@@ -18,7 +18,7 @@ const p3 = new Promise((resolve, _) => {
 
 Promise.race([p1, p2, p3])
     .then((values) => {
-        console.log("最先完成任务的：",values);
+        console.log("最先完成任务的：", values);
     })
     .catch((error) => {
         console.error(error.message);
