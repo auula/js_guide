@@ -18,6 +18,8 @@ const p5 = new Promise((_, reject) => {
 });
 
 // Using .catch:
+// Promise.all() 方法接收一个 promise 的 iterable 类型
+//（注：Array，Map，Set 都属于 ES6 的 iterable 类型）的输入
 Promise.all([p1, p2, p3, p4, p5])
     .then((values) => {
         console.log(values);
