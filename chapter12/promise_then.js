@@ -15,6 +15,7 @@ myPromise
     .then((value) => {
         console.log("Resolved with value:", value);
     })
+    // 不管前面所有步骤十分出现了异常或者错误，这里的 catch 一定会被执行
     .catch((error) => {
         console.log("Caught an error:", error.message);
     });
