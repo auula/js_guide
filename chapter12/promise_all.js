@@ -5,11 +5,11 @@ const promise1 = Promise.resolve(3);
 const promise2 = 42;
 
 const promise3 = new Promise((resolve, _) => {
-    setTimeout(resolve, 3000, 'foo');
+    setTimeout(resolve, 500, 'foo');
 });
 
 const promise4 = new Promise((resolve, _) => {
-    setTimeout(resolve("promise4"), 1000);
+    setTimeout(resolve("promise4"), 100);
 });
 
 // 但是有一个中断那么所有的 Promise 就会被中断
