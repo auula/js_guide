@@ -27,6 +27,7 @@ const myPromise = new Promise((resolve, reject) => {
 myPromise.then(
     // lambda 表达式执行
     (value) => console.log("执行成功结果：" + value),
+    // 此种方式的弊端，如果上面的 (value) 执行出错，那么这个 (error) 是没有感知的
     (error) => console.log("执行失败结果：" + error)
 );
 
