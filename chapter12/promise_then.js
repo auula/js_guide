@@ -19,3 +19,9 @@ myPromise
     .catch((error) => {
         console.log("Caught an error:", error.message);
     });
+
+
+
+
+// 多个 then 语句块组合
+fetch(){}
