@@ -23,5 +23,3 @@ myPromise
 
 
 
-// 多个 then 语句块组合
-fetch(){}
