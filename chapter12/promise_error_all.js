@@ -32,5 +32,5 @@ Promise.all([p1, p2, p3, p4, p5])
         console.error(error.message);
     });
 
-  // Logs:
-  // "reject"
+// Logs:
+// "reject"
