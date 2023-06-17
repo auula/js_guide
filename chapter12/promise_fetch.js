@@ -6,8 +6,7 @@ fetch("https://random-data-api.com/api/v2/users?size=1")
     .then(resopnse => {
         return resopnse.json();
     }).then(profile => {
-        Object.assign(obj, profile);
-        return obj;
+        return Object.assign(obj, profile);
     }).then(obj => {
         console.log(`
         Fetch Data:
