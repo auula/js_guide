@@ -10,12 +10,11 @@ fetch("https://random-data-api.com/api/v2/users?size=1")
         Object.assign(obj, profile);
         return obj;
     }).then(obj => {
-        let info = `
+        console.log(`
         Fetch Data:
         Name: ${obj.first_name} ${obj.last_name},
         Email: ${obj.email},
-        `
-        console.log(info);
+        `);
     }).catch(error => {
         console.log(error);
     });
