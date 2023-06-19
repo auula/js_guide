@@ -9,7 +9,7 @@ function wait(duration) {
         if (duration < 0) {
             reject(new Error("duration time value not legal."));
         }
-        
+
 
         // setTimeout(resolve, duration) 的行为与直接调用 resolve() 函数相似，
         // 它会立即解析 Promise 并输出结果，
