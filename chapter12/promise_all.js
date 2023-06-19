@@ -2,7 +2,7 @@
 
 const promise1 = Promise.resolve(3);
 
-const promise2 = 42;
+const promise2 = 0 / 0;
 
 const promise3 = new Promise((resolve, _) => {
     setTimeout(resolve, 500, 'foo');
@@ -12,7 +12,7 @@ const promise4 = new Promise((resolve, _) => {
     setTimeout(resolve("promise4"), 100);
 });
 
-// 但是有一个中断那么所有的 Promise 就会被中断
+// 会收集所有的 promise 的异步运行的结果
 Promise.all([promise1, promise2, promise3, promise4]).then((values) => {
     console.log(values);
 });
