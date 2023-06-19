@@ -2,7 +2,7 @@
 // 它接收一个 Promise 数组作为参数，并返回一个新的 Promise，
 // 该 Promise 在所有输入 Promise 都已经完成或被拒绝后解析为结果数组。
 
-
+// 和 Promise.all 区别在于即使全部失败，也会返回新的期约结果
 let ps = [
     Promise.resolve(1),
     Promise.resolve(2),
