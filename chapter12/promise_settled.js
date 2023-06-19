@@ -14,7 +14,7 @@ let ps = [
             resolve(randomNumber);
         } else {
             // 演示计算出现错误的过程
-            reject("Random number is less than or equal to 0.5");
+            reject(new Error("Random number is less than or equal to 0.5"));
         }
     }),
 ];
@@ -31,4 +31,6 @@ Promise.allSettled(ps).then(results => {
             console.log('Rejected:', res.reason);
         }
     });
-})
+}).catch(error => {
+    console.log('Error:', error.message);
+});
