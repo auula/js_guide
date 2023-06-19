@@ -2,3 +2,20 @@
 // 它接收一个 Promise 数组作为参数，并返回一个新的 Promise，
 // 该 Promise 在所有输入 Promise 都已经完成或被拒绝后解析为结果数组。
 
+
+let ps = [
+    Promise.resolve(1),
+    Promise.resolve(2),
+    Promise.reject(4),
+    Promise.resolve(5),
+];
+
+Promise.allSettled(ps).then(results => {
+    results.forEach(res => {
+        if (res.status === 'fulfilled') {
+            console.log('Fulfilled:', res.value);
+          } else if (res.status === 'rejected') {
+            console.log('Rejected:', res.reason);
+          }
+    });
+})
