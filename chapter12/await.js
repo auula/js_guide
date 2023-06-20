@@ -12,7 +12,7 @@ const setNum = () => {
 }
 
 async function getNum() {
-    let num = await setNum();
+    await setNum();
     console.log(num);
 }
 
