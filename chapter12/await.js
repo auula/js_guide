@@ -57,7 +57,7 @@ const promises = [p1, p2, p3];
 })();
 
 // 乱序执行很正常
-async function ps() {
+async function bigin() {
     for await (const p of promises) {
         try {
             console.log(p);
@@ -67,4 +67,4 @@ async function ps() {
     }
 }
 
-ps();
+bigin();
