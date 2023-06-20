@@ -46,7 +46,6 @@ const promises = [p1, p2, p3];
 
 async () => {
     for await (const p of promises) {
-        let res = p;
-        console.log(res);
+        console.log(p);
     }
 }
