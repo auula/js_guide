@@ -44,6 +44,7 @@ const p3 = new Promise((resolve, reject) => {
 
 const promises = [p1, p2, p3];
 
+// 必须使用一个 async 匿名函数包起来
 (async () => {
     for (const p of promises) {
         try {
