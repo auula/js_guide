@@ -27,19 +27,19 @@ console.log(getNum());
 const p1 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(1);
-    }, 2000)
+    }, Math.ceil(Math.random() * 1000))
 });
 
 const p2 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(2);
-    }, 2000)
+    }, Math.ceil(Math.random() * 1000))
 });
 
 const p3 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(3);
-    }, 2000)
+    }, Math.ceil(Math.random() * 1000))
 });
 
 const promises = [p1, p2, p3];
@@ -55,3 +55,18 @@ const promises = [p1, p2, p3];
         }
     }
 })();
+
+// 乱序执行很正常
+async function ps() {
+    (async () => {
+        for await (const p of promises) {
+            try {
+                console.log(p);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    })();
+}
+
+ps();
