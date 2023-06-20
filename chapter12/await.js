@@ -58,15 +58,13 @@ const promises = [p1, p2, p3];
 
 // 乱序执行很正常
 async function ps() {
-    (async () => {
-        for await (const p of promises) {
-            try {
-                console.log(p);
-            } catch (error) {
-                console.log(error);
-            }
+    for await (const p of promises) {
+        try {
+            console.log(p);
+        } catch (error) {
+            console.log(error);
         }
-    })();
+    }
 }
 
 ps();
