@@ -2,7 +2,7 @@
 
 let num = 10;
 
-// 在一个异步操作里面修改外表的 num 值
+// 在一个异步操作里面修改外部的 num 值
 const setNum = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
