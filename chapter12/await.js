@@ -20,3 +20,33 @@ async function getNum() {
 }
 
 console.log(getNum());
+
+
+
+// 在 for 循环里面使用 async 函数
+const p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(1);
+    }, 2000)
+});
+
+const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(2);
+    }, 2000)
+});
+
+const p3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(3);
+    }, 2000)
+});
+
+const promises = [p1, p2, p3];
+
+async () => {
+    for await (const p of promises) {
+        let res = p;
+        console.log(res);
+    }
+}
