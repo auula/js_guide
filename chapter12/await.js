@@ -1,13 +1,19 @@
 // js 中的 awiat 和 async 异步调用使用
 
+let num = 10;
 
-// 传入一个 url 获取对应的数据
-async function getJSON(url) {
-    let response = await fetch(url);
-    let body = await response.json();
-    return body;
+const setNum = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            num = 20;
+            resolve();
+        }, 1000);
+    });
 }
 
-let data = await getJSON("https://random-data-api.com/api/v2/users?size=1");
+async function getNum() {
+    let num = await setNum();
+    console.log(num);
+}
 
-console.log(data);
+getNum();
