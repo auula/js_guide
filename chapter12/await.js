@@ -44,8 +44,13 @@ const p3 = new Promise((resolve, reject) => {
 
 const promises = [p1, p2, p3];
 
-async () => {
-    for await (const p of promises) {
-        console.log(p);
+(async () => {
+    for (const p of promises) {
+        try {
+            let res = await p;
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
     }
-}
+})();
