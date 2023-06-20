@@ -19,4 +19,4 @@ async function getNum() {
     console.log(num);
 }
 
-getNum();
+console.log(getNum());
