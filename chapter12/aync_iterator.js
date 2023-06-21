@@ -23,3 +23,42 @@ async function test() {
 }
 
 test();
+
+
+function clock_next(interval, max = Infinity) {
+    // 就是一个时间到另外一个时间到时差
+    function until(time) {
+        return new Promise(resolve => setTimeout(resolve, time - Date.now()));
+    };
+
+    return {
+        // 记录开始时间
+        startTime: Date.now(),
+        // 次数
+        count: 1,
+        async next() {
+            if (this.count > max) {
+                // 次数到了结束
+                return { done: true };
+            }
+            // 计算下次到开始时间
+            let targetTime = this.startTime + this.count * interval;
+            // 开始阻塞等待唤醒
+            await until(targetTime);
+            // 到点了，开始返回
+            return { value: this.count++ };
+        },
+
+        // 迭代器自己也是一个可迭代对象
+        [Symbol.asyncIterator]() {
+            return this;
+        },
+    };
+}
+
+(async () => {
+    for await (let tick of clock_next(600,10)) {
+        let t = tick;
+        console.log(t);
+    }
+})()
