@@ -43,5 +43,6 @@ Object.defineProperty(obj,"y",{
 
 // 100 
 console.log(obj.y);
+
 // [ 'x' ] 没有 y 因为 y 设置为了 不可枚举
 console.log(Object.keys(obj));
