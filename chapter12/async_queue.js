@@ -81,9 +81,6 @@ console.log(aq.dequeue());
 console.log(aq.dequeue());
 
 
-for (let v of aq) {
-    console.log(v);
-}
 
 // [Running] node "/Users/dings/Documents/js_guide/chapter12/async_queue.js"
 // Promise { <pending> }
