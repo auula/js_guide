@@ -30,3 +30,6 @@ let ds2 = Object.getOwnPropertyDescriptor(random,"octet");
 
 console.log(ds2);
 
+let ds3 = Object.getOwnPropertyDescriptor({},"toString");
+
+console.log(ds3 ?? "没有toString可访问属性");
