@@ -57,8 +57,16 @@ function clock_next(interval, max = Infinity) {
 }
 
 (async () => {
-    for await (let tick of clock_next(600,10)) {
+    for await (let tick of clock_next(600, 10)) {
         let t = tick;
         console.log(t);
     }
 })()
+
+
+// let iterable = clock_next(600, 10);
+
+// for (let result = iterable.next(); !result.done; result = iterable.next()) {
+//     console.log(result.value);
+// }
+
