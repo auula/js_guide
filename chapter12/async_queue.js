@@ -11,10 +11,12 @@ class AsyncQueue {
 
     enqueue(value) {
 
+        // 关闭了直接返回错误信息
         if (this.closed) {
             return new Error("Async closed.");
         }
 
+        // 如果有 resolve 需要处理则处理
         if (this.resolves.length > 0) {
             const resolve = this.resolves.shift();
             resolve(resolve);
@@ -61,7 +63,7 @@ AsyncQueue.EOS = Symbol("end-of-stream");
 
 let aq = new AsyncQueue();
 
-
+console.log(aq.dequeue());
 
 aq.enqueue(1);
 aq.enqueue(2);
@@ -72,3 +74,12 @@ console.log(aq.dequeue());
 console.log(aq.dequeue());
 console.log(aq.dequeue());
 console.log(aq.dequeue());
+
+// [Running] node "/Users/dings/Documents/js_guide/chapter12/async_queue.js"
+// Promise { <pending> }
+// Promise { 2 }
+// Promise { 3 }
+// Promise { 4 }
+// Promise { <pending> }
+
+// [Done] exited with code=0 in 0.144 seconds
