@@ -20,6 +20,7 @@ class AsyncQueue {
 
         // 如果有 resolve 需要处理则处理
         if (this.resolves.length > 0) {
+            console.warn(value,"没有被存放，而是使用了 resolves.")
             const resolve = this.resolves.shift();
             resolve(resolve);
         } else {
