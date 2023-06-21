@@ -12,6 +12,7 @@ async function* clock(interval, max = Infinity) {
         });
         // 这个 count 会自动包装为 Promise
         yield count;
+        // yield Promise.resolve(count);
     }
 }
 
