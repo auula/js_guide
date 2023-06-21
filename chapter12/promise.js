@@ -18,9 +18,9 @@
 // 失败情景实例：
 const myPromise = new Promise((resolve, reject) => {
     // 成功状态 resolve
-    setTimeout(() => resolve('Hello world'), 1000);
+    setTimeout(() => resolve('Hello world'), Math.random() * 1000);
     // 失败状态 reject
-    setTimeout(() => reject('Ahh...'), 500);
+    setTimeout(() => reject('Ahh...'), Math.random() * 500);
 });
 
 // 采用 then 链式调用的方式
