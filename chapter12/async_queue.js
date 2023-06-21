@@ -1,5 +1,7 @@
 // js 使用 promise 实现异步队列
 
+
+// https://chat.openai.com/share/baaf06c5-4bcd-4732-9071-854a3e5f406f
 class AsyncQueue {
 
     constructor() {
