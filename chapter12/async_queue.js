@@ -1,7 +1,5 @@
 // js 使用 promise 实现异步队列
 
-
-
 class AsyncQueue {
 
     constructor() {
