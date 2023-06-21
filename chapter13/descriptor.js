@@ -5,7 +5,7 @@ let obj = {
 }
 
 // 获取对象的某一个属性的描述符
-let ds = Object.getOwnPropertyDescriptor(obj,"x");
+let ds = Object.getOwnPropertyDescriptor(obj, "x");
 
 // { value: 10, writable: true, enumerable: true, configurable: true }
 console.log(ds);
@@ -18,7 +18,7 @@ const random = {
     }
 }
 
-let ds2 = Object.getOwnPropertyDescriptor(random,"octet");
+let ds2 = Object.getOwnPropertyDescriptor(random, "octet");
 
 // {
 //     get: [Function: get octet],
@@ -29,12 +29,12 @@ let ds2 = Object.getOwnPropertyDescriptor(random,"octet");
 
 console.log(ds2);
 
-let ds3 = Object.getOwnPropertyDescriptor({},"toString");
+let ds3 = Object.getOwnPropertyDescriptor({}, "toString");
 
 console.log(ds3 ?? "没有toString可访问属性");
 
 // 为 obj 添加一个属性，并且设置属性参数
-Object.defineProperty(obj,"y",{
+Object.defineProperty(obj, "y", {
     value: 100,
     writable: true,
     enumerable: false,
