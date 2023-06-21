@@ -32,3 +32,16 @@ console.log(ds2);
 let ds3 = Object.getOwnPropertyDescriptor({},"toString");
 
 console.log(ds3 ?? "没有toString可访问属性");
+
+// 为 obj 添加一个属性，并且设置属性参数
+Object.defineProperty(obj,"y",{
+    value: 100,
+    writable: true,
+    enumerable: false,
+    configurable: true,
+});
+
+// 100 
+console.log(obj.y);
+// [ 'x' ] 没有 y 因为 y 设置为了 不可枚举
+console.log(Object.keys(obj));
