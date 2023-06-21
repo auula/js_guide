@@ -58,8 +58,7 @@ function clock_next(interval, max = Infinity) {
 
 (async () => {
     for await (let tick of clock_next(600, 10)) {
-        let t = tick;
-        console.log(t);
+        console.log(tick);
     }
 })()
 
