@@ -27,7 +27,7 @@ class AsyncQueue {
     }
 
     dequeue() {
-        // 如果有值则取出返回
+        // 先看看是否还有元素，如果有值则取出返回，在判断是否关闭
         if (this.values.length > 0) {
             const value = this.values.shift();
             return Promise.resolve(value);
@@ -38,12 +38,15 @@ class AsyncQueue {
             // 并将解析函数resolve添加到resolves数组中，
             // 以便在后续元素入队时调用。
             return new Promise(resolve => {
+                // 什么时候完成取决于，什么时候调用 enqueue
                 this.resolves.push(resolve);
             });
         }
     }
 
     close() {
+        // 循环遍历resolves数组，逐个调用解析函数，
+        // 并传入表示结束的特殊值AsyncQueue.EOS。
         while (this.resolves.length > 0) {
             this.resolves.shift()(AsyncQueue.EOS);
         }
@@ -74,6 +77,11 @@ console.log(aq.dequeue());
 console.log(aq.dequeue());
 console.log(aq.dequeue());
 console.log(aq.dequeue());
+
+
+for (let v of aq) {
+    console.log(v);
+}
 
 // [Running] node "/Users/dings/Documents/js_guide/chapter12/async_queue.js"
 // Promise { <pending> }
