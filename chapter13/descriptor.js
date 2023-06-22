@@ -61,5 +61,5 @@ Object.defineProperty(random, "octet", { set: function (v) { console.log(v) } })
 // 再次获取到 random 属性信息
 console.log(Object.getOwnPropertyDescriptor(random, "octet"));
 
-// 数组 random 属性
+// 通过 random 的 octet 可访问属性设置值
 random.octet = 10;
