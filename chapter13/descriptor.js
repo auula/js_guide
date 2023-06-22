@@ -54,5 +54,12 @@ Object.defineProperty(obj, "y", {
 
 // [ 'x', 'y' ] 可枚举的
 console.log(Object.keys(obj));
+ 
+// 添加一个设置一个访问属性为 octet
+Object.defineProperty(random, "octet", { set: function (v) { console.log(v) } });
 
+// 再次获取到 random 属性信息
+console.log(Object.getOwnPropertyDescriptor(random, "octet"));
 
+// 数组 random 属性
+random.octet = 10;
