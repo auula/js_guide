@@ -46,3 +46,13 @@ console.log(obj.y);
 
 // [ 'x' ] 没有 y 因为 y 设置为了 不可枚举
 console.log(Object.keys(obj));
+
+// 修改 obj 的 y 属性可枚举
+Object.defineProperty(obj,"y",{
+    enumerable:true,
+});
+
+// [ 'x', 'y' ] 可枚举的
+console.log(Object.keys(obj));
+
+
