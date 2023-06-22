@@ -85,3 +85,5 @@ Object.defineProperties(obj2, {
 console.log(obj2.t);
 
 console.log(Object.getOwnPropertyDescriptors(obj2));
+
+
