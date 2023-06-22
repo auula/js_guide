@@ -48,8 +48,8 @@ console.log(obj.y);
 console.log(Object.keys(obj));
 
 // 修改 obj 的 y 属性可枚举
-Object.defineProperty(obj,"y",{
-    enumerable:true,
+Object.defineProperty(obj, "y", {
+    enumerable: true,
 });
 
 // [ 'x', 'y' ] 可枚举的
