@@ -22,7 +22,6 @@ async function getNum() {
 console.log(getNum());
 
 
-
 // 在 for 循环里面使用 async 函数
 const p1 = new Promise((resolve, reject) => {
     setTimeout(() => {

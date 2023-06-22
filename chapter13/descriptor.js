@@ -68,6 +68,7 @@ random.octet = 10;
 // 批量设置某个对象的属性信息
 let obj2 = Object.create(null);
 
+// 对一个空 obj2 对对象添加某个属性和可访问属性
 Object.defineProperties(obj2, {
     x: { value: 1, writable: true, enumerable: true, configurable: true },
     y: { value: 2, writable: false, enumerable: true, configurable: true },
