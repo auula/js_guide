@@ -54,7 +54,7 @@ Object.defineProperty(obj, "y", {
 
 // [ 'x', 'y' ] 可枚举的
 console.log(Object.keys(obj));
- 
+
 // 添加一个设置一个访问属性为 octet
 Object.defineProperty(random, "octet", { set: function (v) { console.log(v) } });
 
@@ -63,3 +63,24 @@ console.log(Object.getOwnPropertyDescriptor(random, "octet"));
 
 // 通过 random 的 octet 可访问属性设置值
 random.octet = 10;
+
+
+// 批量设置某个对象的属性信息
+let obj2 = Object.create(null);
+
+Object.defineProperties(obj2, {
+    x: { value: 1, writable: true, enumerable: true, configurable: true },
+    y: { value: 2, writable: false, enumerable: true, configurable: true },
+    t: {
+        get() {
+            return this.x * this.y;
+        },
+        enumerable: true,
+        configurable: true,
+    }
+});
+
+// 2
+console.log(obj2.t);
+
+console.log(Object.getOwnPropertyDescriptors(obj2));
