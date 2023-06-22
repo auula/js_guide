@@ -14,7 +14,7 @@ console.log(ds);
 // 这个对象有一个只读的访问属性
 const random = {
     get octet() {
-        return Math.floor(Math.random * 256);
+        return Math.floor(Math.random() * 256);
     }
 }
 
