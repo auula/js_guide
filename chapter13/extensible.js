@@ -41,4 +41,10 @@ prevent.y = 200;
 // 此时这个子对象就可以访问到 y 属性了 200
 console.log(child.y);
 
+// 已有属性的值也不能被修改
+child.x = 1000;
+
+// 100
+console.log(obj.x);
+
 
