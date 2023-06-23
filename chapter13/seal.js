@@ -31,3 +31,12 @@ obj.x = 1000;
 
 // 1000
 console.log(obj.x);
+
+// 冻结一个对象
+Object.freeze(obj);
+
+// 因为冻结对象了，不能再修改了
+obj.x = 2000;
+
+// 1000 原始值
+console.log(obj.x);
