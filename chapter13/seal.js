@@ -11,6 +11,7 @@ let obj = {
 
 obj.x = 100;
 
+
 // 100
 console.log(obj.x);
 
@@ -35,7 +36,7 @@ console.log(obj.x);
 // 冻结一个对象
 Object.freeze(obj);
 
-// 因为冻结对象了，不能再修改了
+// 因为冻结对象了，不能再修改了，属性变为只读，除非有其他 set 访问属性可以操作
 obj.x = 2000;
 
 // 1000 原始值
