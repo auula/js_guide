@@ -17,6 +17,9 @@ console.log(obj.x);
 // 设置成为密封对象
 Object.seal(obj);
 
+// 判断一个对象是否密封,true
+console.log(Object.isSealed(obj));
+
 // 不能添加新属性
 obj.y = 300;
 
