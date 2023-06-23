@@ -18,6 +18,6 @@ JavaScript: The Definitive Guide (seventh edition) Book source code.
 - [10. JS官方API库编程](https://github.com/auula/js_guide/tree/main/chapter10)
 - [11. JS中迭代器和生成器](https://github.com/auula/js_guide/tree/main/chapter11)
 - [12. JS中异步编程](https://github.com/auula/js_guide/tree/main/chapter12)
-- [13. JS中元编程](https://github.com/auula/js_guide/tree/main/chapter12)
+- [13. JS中元编程](https://github.com/auula/js_guide/tree/main/chapter13)
 
 ---
