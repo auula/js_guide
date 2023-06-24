@@ -28,4 +28,8 @@ class Range {
 let range = new Range();
 
 // Range
-console.log(Object.prototype.toString.call(range).slice(8,-1))
+console.log(classof(range));
+
+function classof(params) {
+    return Object.prototype.toString.call(params).slice(8,-1)
+}
