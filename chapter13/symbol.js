@@ -17,3 +17,15 @@ let uint8 = {
 };
 
 console.log(uint8.isUint8(128) === 128 instanceof uint8);
+
+class Range {
+    // 这样重写 toStringTag 方法
+    get [Symbol.toStringTag]() {
+        return "Range";
+    }
+}
+
+let range = new Range();
+
+// Range
+console.log(Object.prototype.toString.call(range).slice(8,-1))
