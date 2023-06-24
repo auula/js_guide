@@ -18,6 +18,21 @@ let uint8 = {
 
 console.log(uint8.isUint8(128) === 128 instanceof uint8);
 
+
+// Symbol.toStringTag 公认符号可以指定对象的类型特征
+
+let types = [[],{},()=>{},"",0,false];
+
+
+let str = "";
+
+for (const t of types) {
+    str += classof(t) + " ";
+}
+
+// Array Object Function String Number Boolean 
+console.log(str);
+
 class Range {
     // 这样重写 toStringTag 方法
     get [Symbol.toStringTag]() {
