@@ -20,7 +20,7 @@ console.log(uint8.isUint8(128) === 128 instanceof uint8);
 
 
 // Symbol.toStringTag 公认符号可以指定对象的类型特征
-
+// 默认的内置类型都有自己的类型特征，直接调用就可以
 let types = [[],{},()=>{},"",0,false];
 
 
