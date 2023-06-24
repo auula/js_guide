@@ -49,3 +49,24 @@ function classof(params) {
     // [object Range]  这样一坨 [object 长度是 8
     return Object.prototype.toString.call(params).slice(8,-1)
 }
+
+
+class EZArray extends Array {
+    // 获取下标为第一个元素
+    get first() {
+        return this[0];
+    }
+    // 获取下标最后一个元素
+    get last() {
+        return this[this.length - 1];
+    }
+
+    // get [Symbol.toStringTag]() {
+    //     return "Array";
+    // }
+}
+
+let arr = new EZArray();
+
+// 调用父类的
+console.log(classof(arr));
