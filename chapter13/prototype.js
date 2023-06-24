@@ -23,3 +23,19 @@ Object.setPrototypeOf(arr, p);
 
 // undefined 运行时异常
 // console.log(arr.join());
+
+
+let c = { z: 3 };
+
+let d = {
+    x: 1,
+    y: 2,
+    // 通过 __proto__ 字面量的方式设置 d 的原型为 c
+    __proto__: c
+};
+
+// { x: 1, y: 2, __proto__: { z: 3 } }
+console.log(d);
+
+// true
+console.log(c.isPrototypeOf(d));
