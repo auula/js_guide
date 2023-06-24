@@ -31,6 +31,6 @@ let range = new Range();
 console.log(classof(range));
 
 function classof(params) {
-    // [object Range]  这样坨 [object 长度是 8
+    // [object Range]  这样一坨 [object 长度是 8
     return Object.prototype.toString.call(params).slice(8,-1)
 }
