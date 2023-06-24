@@ -23,7 +23,3 @@ const result2 = spArray.map(item => item * 2);
 
 console.log(result2 instanceof SpArray); // false
 console.log(result2 instanceof Array);   // true
-
-
-
-
