@@ -9,7 +9,7 @@ let uint8 = {
     [Symbol.hasInstance](x) {
         return this.isUint8(x);
     },
-    
+
     isUint8: function (x) {
         // uint8 范围
         return Number.isInteger(x) && x >= 0 && x <= 255;
