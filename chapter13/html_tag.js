@@ -4,6 +4,7 @@
 
 // 第一个参数为模版参数，第二个为动态模版参数
 function html(strings, ...values) {
+    // values 取决于模版字符串中的 ${} 个数
     let escaped = values.map(v => String(v)
         .replace("&", "&amp")
         .replace("<", "&lt")
