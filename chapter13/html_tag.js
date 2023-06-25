@@ -12,7 +12,7 @@ function html(strings, ...values) {
         .replace("'", "&#39"));
 
     let result = strings[0];
-
+    
     for (let i = 0; i < escaped.length; i++) {
         result += escaped[i] + strings[i + 1];
     }
