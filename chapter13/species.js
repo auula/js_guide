@@ -13,6 +13,7 @@ console.log(result instanceof MyArray); // true
 
 class SpArray extends Array {
     // 通过 Symbol.species 属性来定义返回的构造函数
+    // 覆盖 species 到父级的 Array 构造函数上
     static get [Symbol.species]() {
         return Array;
     }
