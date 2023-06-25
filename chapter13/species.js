@@ -1,7 +1,7 @@
 // js 中的 Symbol.species 公认符号
 
 // Symbol.species 的基本使用方法，它允许你在继承中指定衍生对象的构造函数，
-// 以便你可以控制返回的实例类型。
+// 以便你可以控制返回的实例类型，只适用于继承来实现类。
 
 class MyArray extends Array { };
 
