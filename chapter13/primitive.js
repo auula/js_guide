@@ -23,7 +23,8 @@ obj[Symbol.toPrimitive] = function (hint) {
     }
 }
 
-console.log(obj);
+// obj value is: 100
+console.log(`obj value is: ${obj}`);
 // 200
 console.log(obj + obj);
 // 200
