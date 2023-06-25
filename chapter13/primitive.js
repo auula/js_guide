@@ -23,6 +23,7 @@ obj[Symbol.toPrimitive] = function (hint) {
     }
 }
 
+console.log(obj);
 // 200
 console.log(obj + obj);
 // 200
