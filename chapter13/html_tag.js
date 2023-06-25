@@ -1,5 +1,8 @@
 // js 中的函数模版来实现模版标签
+// https://chat.openai.com/share/a86d1921-d23a-40c8-a3a1-b4715adff2a2
 
+
+// 第一个参数为模版参数，第二个为动态模版参数
 function html(strings, ...values) {
     let escaped = values.map(v => String(v)
         .replace("&", "&amp")
