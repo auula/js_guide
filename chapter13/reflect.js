@@ -2,11 +2,13 @@
 
 
 let obj = {
-    name : "Leon",
+    name: "Leon",
 }
 
-function fun(params) {
+function f(params) {
+    console.log(this);
     console.log(params);
 }
 
-Reflect.apply(fun,obj,"Leon");
+// 将 f 函数绑定到 obj 对象上，并且传入一组参数数组
+Reflect.apply(f, obj, ["Leon"]);
