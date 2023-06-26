@@ -10,4 +10,4 @@ console.log(proxy);
 
 delete proxy.y;
 // undefined
-console.log(proxy.y);
+console.log(obj.y);
