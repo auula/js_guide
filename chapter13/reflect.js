@@ -39,3 +39,13 @@ let p2 = Reflect.construct(People, ["Leon", 24], Object);
 // [Function: Object]
 // People { name: 'Leon', age: 24 }
 console.log(p2);
+
+var obj2 = { x: 1, y: 2 };
+let x = Reflect.get(obj2, "x"); // 1
+
+console.log(x);
+
+// Array
+let y = Reflect.get(["zero", "one"], 1); // "one"
+
+console.log(y);
