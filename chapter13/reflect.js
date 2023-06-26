@@ -28,13 +28,13 @@ class People {
 }
 
 // 通过反射创建一个类型的对象
-let p = Reflect.construct(People,["Leon",24]);
+let p = Reflect.construct(People, ["Leon", 24]);
 
 // People { name: 'Leon', age: 24 }
 console.log(p);
 
 // 通过反射创建一个类型的对象，指定 new.target
-let p2 = Reflect.construct(People,["Leon",24],Object);
+let p2 = Reflect.construct(People, ["Leon", 24], Object);
 
 // [Function: Object]
 // People { name: 'Leon', age: 24 }
