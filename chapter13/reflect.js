@@ -15,12 +15,18 @@ Reflect.apply(f, obj, ["Leon"]);
 
 
 class People {
-    
-    name = "Leon";
-    age = 24;
 
-    constructor(name,age) {
+    name = "";
+    age = 0;
+
+    constructor(name, age) {
         this.name = name;
         this.age = age;
     }
 }
+
+// 通过反射创建一个类型的对象
+let p = Reflect.construct(People,["Leon",24]);
+
+// People { name: 'Leon', age: 24 }
+console.log(p);
