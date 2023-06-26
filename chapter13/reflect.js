@@ -12,3 +12,15 @@ function f(params) {
 
 // 将 f 函数绑定到 obj 对象上，并且传入一组参数数组
 Reflect.apply(f, obj, ["Leon"]);
+
+
+class People {
+    
+    name = "Leon";
+    age = 24;
+
+    constructor(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+}
