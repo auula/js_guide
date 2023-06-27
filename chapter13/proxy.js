@@ -12,9 +12,24 @@ delete proxy.y;
 // undefined
 console.log(obj.y);
 
-
-function accessTheDatabase() { 
-    return 42;
+// 定义一个对象类型
+class Person {
+    name = "Leon";
+    age = 24;
 }
+
+let p = new Person();
+
+
+// 通过代理来实现某个类型的 say 方法
+let pproxy = new Proxy(p, {
+    get: function (obj, prop) {
+        if (prop === "say") {
+            return `hi my name is ${obj.name} age ${obj.age}.`;
+        }
+    }
+});
+
+console.log(pproxy.say);
 
 
