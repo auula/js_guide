@@ -7,11 +7,7 @@ function accessTheDatabase() {
 }
 
 // proxy 可以用来操作被代理的对象
-let { proxy, revoke } = Proxy.revocable(accessTheDatabase, {
-    get(o, name, target) {
-        return name;
-    },
-});
+let { proxy, revoke } = Proxy.revocable(accessTheDatabase, {});
 
 // 42
 console.log(proxy());
