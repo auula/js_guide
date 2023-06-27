@@ -29,7 +29,7 @@ let pproxy = new Proxy(p, {
             return `hi my name is ${obj.name} age ${obj.age}.`;
         }
     },
-    set: function (obj,prop,args) {
+    set: function (obj, prop, args) {
         if (prop === "name") {
             obj.name = args;
         }
@@ -39,7 +39,5 @@ let pproxy = new Proxy(p, {
 // 通过代理对象来设置某个属性
 pproxy.name = "Leon Ding";
 
-// hi my name is Leon Ding age 24.
+// hi my name is Leon Ding age 24 .
 console.log(pproxy.say);
-
-
