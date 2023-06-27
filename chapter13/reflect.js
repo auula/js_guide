@@ -49,3 +49,4 @@ console.log(x);
 let y = Reflect.get(["zero", "one"], 1); // "one"
 
 console.log(y);
+
