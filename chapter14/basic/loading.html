@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Loading HTML</title>
+</head>
+
+<body>
+    <div id="container">
+        <input type="button" value="loading" id="btn"></input>
+    </div>
+    <script type="application/javascript">
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            console.log("ok");
+            importScript("./loading.js").catch(err => {
+                console.log(err);
+            });
+        });
+
+        function importScript(url) {
+            return new Promise((resolve, reject) => {
+                let s = document.createElement("h1");
+                s.onload = () => {
+                    resolve();
+                };
+                s.onerror = (e) => {
+                    reject(e);
+                };
+                s.textContent = "loading successful.";
+                document.body.append(s);
+            });
+        }
+    </script>
+</body>
