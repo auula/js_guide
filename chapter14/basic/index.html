@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>View HTML</title>
+
+    <style type="text/css">
+        /* css 元素样式 ID 选择器 */
+        #container {
+            background-color: blueviolet;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <!-- type 属性是最为常用的指定脚步语言类型，目前还是 js 使用的最多 -->
+    <script type="application/javascript" defer src="./defer.js"></script>
+
+    <script type="application/javascript">
+        console.log("嵌入到 HTML 中的 JS 执行了。");
+    </script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <!-- type 属性才是最为常见的  language 目前不常用的-->
+    <script language="javascript" async src="./async.js"></script>
+</body>
