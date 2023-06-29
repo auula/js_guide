@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+    <title>JS Scope</title>
+</head>
+<body>
+    <iframe src="./iframe.html"></iframe>
+    <script type="application/javascript" src="./s1.js"></script>
+    <script>
+        // 结果是访问到 index.html 中引入 js 文件到变量
+        console.log("在 Windows 对象中试图访问 s1.js 和 s2.js 中的变量 variable 的值：",variable);
+    </script>
+</body>
