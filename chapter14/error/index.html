@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Window Error</title>
+</head>
+
+<body>
+    <script>
+
+        // 先注册一个全局的错误出来函数
+        window.onerror = function (message, source, line, column, error) {
+            // 错误处理逻辑
+            console.error('发生错误：', message);
+            console.error('脚本来源：', source);
+            console.error('错误行号：', line);
+            console.error('错误列号：', column);
+            console.error('错误对象：', error);
+
+            // 不继续传播错误
+            return true;
+        }
+
+        // 故意触发一个错误
+        undefinedFunction();
+
+    </script>
+</body>
