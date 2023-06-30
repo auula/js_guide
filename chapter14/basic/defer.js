@@ -16,3 +16,6 @@
 // });
 
 console.log("defer.js 总是最后一次执行的。");
+
+console.log(document.readyState);
+

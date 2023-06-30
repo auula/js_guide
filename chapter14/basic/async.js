@@ -16,3 +16,5 @@
 
 console.log("async.js 文件嵌入到 HTML 中的 JS 异步执行了。");
 
+console.log(document.readyState);
+
