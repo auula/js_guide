@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Event Bubble</title>
+</head>
+
+<body>
+    <p id="p">
+        <span>演示 js 事件冒泡机制。</span>
+        <a href="http://www.google.com" target="_blank">Google 搜索</a>
+    </p>
+    <script>
+        // 拿到对应的 doc 元素
+        let p = document.getElementById("p");
+        p.addEventListener("click", function () {
+            alert("a 元素的点击事件被传播的外部了。")
+        });
+    </script>
+</body>
