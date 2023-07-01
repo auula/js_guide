@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <form action="#" method="post">
+    <form action="#" method="post" id="myForm">
         <p>
             <label> Name:
                 <input type="text" id="name"></input>
@@ -16,11 +16,16 @@
                 <input type="tel" id="phone"></input>
             </label>
         </p>
-        <input type="submit" onclick="submit()" value="提 交"></button>
+        <input type="submit" value="提 交"></button>
     </form>
+    
     <script type="application/javascript">
-        function submit() {
+
+        let form = document.getElementById("myForm");
+
+        form.addEventListener("click", function (event) {
             event.preventDefault();
+
             var nameInput = document.getElementById('name');
             var phoneInput = document.getElementById('phone');
 
@@ -29,10 +34,10 @@
             var phoneValue = phoneInput.value;
 
             if (nameValue === "" || phoneValue === "") {
-                alert("输入框不能为空！")
+                console.log("输入框不能为空！");
             }
 
             console.log(nameValue, phoneValue);
-        }
+        })
     </script>
 </body>
