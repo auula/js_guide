@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Data From</title>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <p>
+            <label> Name:
+                <input type="text" id="name"></input>
+            </label>
+            </br>
+            <label>
+                Phone:
+                <input type="tel" id="phone"></input>
+            </label>
+        </p>
+    </form>
+    <button onclick="submit()">提交</button>
+    <script type="application/javascript">
+        function submit() {
+            event.preventDefault();
+            var nameInput = document.getElementById('name');
+            var phoneInput = document.getElementById('phone');
+
+            // 获取输入框的值
+            var nameValue = nameInput.value;
+            var phoneValue = phoneInput.value;
+
+            if (nameValue === "" || phoneValue === "") {
+                return;
+            }
+            
+            console.log(nameValue,nameInput);
+        }
+    </script>
+</body>
