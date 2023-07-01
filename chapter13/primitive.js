@@ -31,3 +31,18 @@ console.log(obj + obj);
 console.log(Number(obj) + obj);
 // 100100
 console.log(Number(obj) + String(obj));
+
+
+// 演示类型运输符号重载机制
+let a = {}, b = {};
+
+a.toString = function () {
+	return "1";
+};
+
+b.valueOf = function () {
+	return 1;
+};
+
+// 11
+console.log(b + a);
