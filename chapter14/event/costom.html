@@ -5,11 +5,28 @@
 </head>
 
 <body>
+    <div id="square" style="background-color: blueviolet; width: 80px;height: 80px;"></div>
     <script>
+
+        let square = document.getElementById("square");
+
         // 创建一个自定义事件，第一个参数为事件类型，第二个为上下文对象。
-        let cn = new CustomEvent('busy', { detail: true });
+        let cn = new CustomEvent("busy", { detail: true });
         // 将自定义的事件通过 dispatchEvent 派发到某个对象上
-        document.dispatchEvent();
+        square.dispatchEvent(cn);
+
+        setTimeout(function () {
+            console.log("执行了");
+            document.dispatchEvent(new CustomEvent("busy", { detail: false }));
+        }, 3000);
+
+        square.addEventListener("busy", (e) => {
+            if (e.detail) {
+                console.log("true");
+            } else {
+                console.log("false");
+            }
+        });
 
     </script>
 </body>
