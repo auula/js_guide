@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Element Selector</title>
+</head>
+
+<body>
+    <div id="square">
+        <label>Input:
+            <input type="text" placeholder="请输入内容" />
+        </label>
+        <label>Phone:
+            <input type="tel" min="12" max="12">
+        </label>
+        <p text="waring"></p>
+        <button class="submit">提 交</button>
+    </div>
+    <script>
+        // 通过 # 元素 ID 进行选择
+        let d = document.getElementById("square");
+        // 通过 . 元素 class 选择
+        let c = document.getElementsByClassName("submit");
+        console.log(d);
+        console.log(c);
+        // 通过元素属性进行选择
+        let t = document.querySelector('p[text="waring"]');
+        console.log(t);
+    </script>
+</body>
