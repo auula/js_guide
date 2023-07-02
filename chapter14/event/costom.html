@@ -16,12 +16,10 @@
         square.dispatchEvent(cn);
 
         setTimeout(function () {
-            console.log("执行了");
             square.dispatchEvent(new CustomEvent("ce", { detail: false }));
         }, 3000);
 
         setTimeout(function () {
-            console.log("执行了");
             square.dispatchEvent(new CustomEvent("ce", { detail: true }));
         }, 5000);
 
