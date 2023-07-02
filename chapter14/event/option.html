@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <title>JS 中的事件监听器参数</title>
+</head>
+
+<body>
+    <p id="p">
+        <span>演示 js 事件传播机制， option 对应事件的作用。</span>
+        <a href="http://www.google.com" target="_blank">Google 搜索</a>
+    </p>
+    <script>
+
+        let opt = {
+            // 顶部元素向下传播，用于指定事件监听器是在捕获阶段还是冒泡阶段触发。
+            capture: true,
+            // 事件监听器在触发一次后会自动被移除，不会再次触发。
+            once: true,
+            // 表示事件监听器不会阻止默认行为。
+            passive: true,
+        };
+
+        // 拿到对应的 doc 元素
+        let p = document.getElementById("p");
+        p.addEventListener("click", function () {
+            alert("a 元素的点击事件被传播的外部了。")
+        });
+    </script>
+</body>
