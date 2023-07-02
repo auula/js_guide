@@ -15,6 +15,13 @@
         <p text="waring"></p>
         <button class="submit">提 交</button>
     </div>
+    <div id="log">
+        <h1>This H1 Element!</h1>
+        <p>
+            Hello <span>World!</span>
+        </p>
+        <img src="https://avatars.githubusercontent.com/u/38412458?v=4">
+    </div>
     <script>
         // 通过 # 元素 ID 进行选择
         let d = document.getElementById("square");
@@ -25,5 +32,17 @@
         // 通过元素属性进行选择
         let t = document.querySelector('p[text="waring"]');
         console.log(t);
+
+        // 获取所有 p 标签，返回一个 NodeList 对象
+        let ps = document.querySelectorAll("p");
+        // 拆解获取到的元素
+        console.log([...ps]);
+
+        // 通过属性选择器，log 下的后代元素
+        let child = document.querySelector("#log span");
+        console.log(child);
+        // log 下的子元素
+        let child2 = document.querySelector("#log>p");
+        console.log(child2);
     </script>
 </body>
