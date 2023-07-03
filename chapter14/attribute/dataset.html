@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <title>ELement DataSet</title>
+    <style type="text/css">
+        .square {
+            background-color: blueviolet;
+            height: 180px;
+            width: 180px;
+        }
+
+        .black {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square">
+        <h3 data-title="this html dataset."></h3>
+    </div>
+    <button>读取 dataset</button>
+    <script>
+        let bt = document.querySelector("button");
+        let sqaure = document.querySelector(".square>h3");
+        bt.addEventListener("click", function () {
+            // this html dataset. 此时就能访问到标签上 dataset 数据
+            // 去掉 data 部分的前缀，后面部分标签上使用 - 分割
+            // 例如 data-color-rgb 等于 *.dataset.colorRgb
+            console.log(sqaure.dataset.title);
+        });
+    </script>
+</body>
