@@ -52,5 +52,15 @@
         // 根据 name 属性值查找某个元素
         let ele = document.getElementsByName("title");
         console.log(ele);
+
+        // 通过深度优先遍历每个元素
+        function traverse(e,f){
+            f(e);
+            for(let child of e.children) {
+                traverse(child,f);
+            }
+        }
+
+        traverse(document.firstElementChild,console.log)
     </script>
 </body>
