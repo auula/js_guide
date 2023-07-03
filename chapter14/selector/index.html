@@ -26,6 +26,7 @@
 
         // 通过 # 元素 ID 进行选择
         let d = document.getElementById("square");
+        console.log(document.nodeType)
 
         // 通过 . 元素 class 选择
         let c = document.getElementsByClassName("submit");
@@ -35,6 +36,7 @@
         // 通过元素属性进行选择
         let t = document.querySelector('p[text="waring"]');
         console.log(t);
+        console.log(t.nodeType)
 
         // 获取所有 p 标签，返回一个 NodeList 对象
         let ps = document.querySelectorAll("p");
