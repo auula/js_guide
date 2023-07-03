@@ -21,7 +21,8 @@
     </div>
     <button>读取 dataset</button>
     <script>
-        let bt = document.querySelector("button");
+        // 这里获取的是一组标签元素
+        let bt = document.getElementsByTagName("button")[0];
         let sqaure = document.querySelector(".square>h3");
         bt.addEventListener("click", function () {
             // this html dataset. 此时就能访问到标签上 dataset 数据
