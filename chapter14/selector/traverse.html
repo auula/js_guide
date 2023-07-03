@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Element Selector</title>
+</head>
+
+<body>
+    <div id="square">
+        <label>Input:
+            <input type="text" placeholder="请输入内容" />
+        </label>
+        <label>Phone:
+            <input type="tel" min="12" max="12">
+        </label>
+        <p text="waring"></p>
+        <button class="submit">提 交</button>
+    </div>
+    <div id="log">
+        <h1 name="title">This H1 Element!</h1>
+        <p>
+            Hello <span>World!</span>
+        </p>
+        <img src="https://avatars.githubusercontent.com/u/38412458?v=4">
+    </div>
+    <script>
+
+        // 通过深度优先遍历每个元素
+        function traverse(e, f) {
+            f(e);
+            for (let child of e.children) {
+                traverse(child, f);
+            }
+        }
+        // 递归执行并且制定每个元素的要执行的方法
+        traverse(document.firstElementChild, console.log)
+    </script>
+</body>
