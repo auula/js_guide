@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Document Operation</title>
+</head>
+
+<body>
+    <script>
+        // innerHTML 可以替换 Body 的内容
+        document.body.innerHTML = `
+            <h1>Oops!</h1>
+        `;
+
+        // 通过 createElement 创建一个元素标签
+        let h2 = document.createElement("h2");
+        h2.innerText = "this h2";
+        // 添加到 body 中显示
+        document.body.append(h2);
+
+        // 设置一个定时器情况 body 的 innerHTML 证明可以为空
+        setTimeout(() => {
+            document.body.innerHTML = '';
+        }, 2000);
+    </script>
+</body>
