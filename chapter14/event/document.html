@@ -20,7 +20,7 @@
 
         // 设置一个定时器情况 body 的 innerHTML 证明可以为空
         setTimeout(() => {
-            document.body.innerHTML = '';
+            document.body.removeChild("h1");
         }, 1000 * 10);
 
         // 获取到 element 的文本内容
