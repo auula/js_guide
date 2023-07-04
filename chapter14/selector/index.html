@@ -56,13 +56,15 @@
         console.log(ele);
 
         // 通过深度优先遍历每个元素
-        function traverse(e,f){
+        function traverse(e, f) {
             f(e);
-            for(let child of e.children) {
-                traverse(child,f);
+            for (let child of e.children) {
+                traverse(child, f);
             }
         }
 
-        traverse(document.firstElementChild,console.log)
+        traverse(document.firstElementChild, console.log)
     </script>
 </body>
+
+</html>
