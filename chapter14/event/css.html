@@ -18,9 +18,22 @@
 </head>
 
 <body>
-    <div class=".square">
+    <div class="square">
     </div>
+    <script>
+        // 获取到 .square 的元素
+        let node = document.querySelector(".square");
+        console.log(node);
 
+        // 每隔 3 秒钟调整一下元素的样式
+        setInterval(() => {
+            if (node.classList.contains("hidden")) {
+                node.classList.remove("hidden");
+            } else {
+                node.classList.add("hidden");
+            }
+        }, 2000);
+    </script>
 </body>
 
 </html>
