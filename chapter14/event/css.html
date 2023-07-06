@@ -33,6 +33,14 @@
                 node.classList.add("hidden");
             }
         }, 2000);
+
+
+        function displayAt(e, x, y) {
+            e.style.display = "block";
+            e.style.position = "absolute";
+            e.style.top = `${y}px`;
+            e.style.left = `${x}px`;
+        }
     </script>
 </body>
 
