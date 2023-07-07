@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chnage Theme</title>
+    <!-- 引入两个不同的样式文件 link 和 sytle 标签可以有 css 选择器属性 -->
+    <link id="drak" rel="stylesheet" type="text/css" href="./dark.css">
+    <link id="light" rel="sytlesheel" type="text/css" href="./light.css">
+</head>
+
+<body>
+    <button>Change Theme</button>
+    <script>
+        // 实现主体切换逻辑，禁用 link 引入的 css 文件
+        let btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+            let drakTheme = document.querySelector("#drak");
+            let lightTheme = document.querySelector("#light");
+            console.log(drakTheme);
+            console.log(lightTheme);
+            if (drakTheme.disabled) {
+                lightTheme.disabled = true;
+                drakTheme.disabled = false;
+            } else {
+                lightTheme.disabled = false;
+                drakTheme.disabled = true;
+            }
+        });
+    </script>
+</body>
+
+</html>
