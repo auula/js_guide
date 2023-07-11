@@ -7,24 +7,25 @@
 <body>
     <div>
         <input type="text" id="input"></input>
+        <p id="output"></p>
     </div>
     <script>
         // 查询到的一个匹配到的元素选择器
         let input = document.querySelector("#input");
-
+        let output = document.querySelector("#output");
         let handle = function () {
-            if (input.value.length >= 10) {
+            if (input.value.length >= 30) {
                 console.log("条件满足移除某个注册的事件。");
                 // 移除某个注册的事件
                 input.removeEventListener("keydown", handle);
                 return
             }
-            console.log(input.value);
+            // 添加删除文字事件联动
+            output.textContent = input.value;
         }
 
         // 添加一个键盘操作事件
         input.addEventListener("keydown", handle);
-
     </script>
 </body>
 
