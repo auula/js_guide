@@ -10,8 +10,7 @@
     <h1>Document Web Form Component</h1>
 
     <script type="text/javascript">
-        // 创建一个能复用代码的
-        // 创建 form 元素
+        // 创建一个能复用代码的，创建 form 元素
         let form = document.createElement('form');
         form.action = "#";
         form.method = "post";
@@ -20,19 +19,17 @@
 
         // 需要 HTML 元素组件的组成代码块
         form.innerHTML = `
-        <form action="#" method="post" id="myForm">
-            <p>
-                <label> Name:
-                    <input type="text" id="name"></input>
-                </label>
-                <br>
-                <label>
-                    Phone:
-                    <input type="tel" id="phone"></input>
-                </label>
-            </p>
-            <input type="submit" value="提 交"></button>
-        </form>`;
+        <p>
+            <label> Name:
+                <input type="text" id="name"></input>
+            </label>
+            <br>
+            <label>
+                Phone:
+                <input type="tel" id="phone"></input>
+            </label>
+        </p>
+        <input type="submit" value="提 交"></button>`;
 
         // 向 body 中添加一个元素
         document.body.appendChild(form);
