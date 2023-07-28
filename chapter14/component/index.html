@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Web Component</title>
+</head>
+
+<body>
+    <h1>Document Web Form Component</h1>
+
+    <script type="text/javascript">
+        // 创建一个能复用代码的
+        let ele = document.createElement('div');
+
+        ele.innerHTML = `
+        <form action="#" method="post" id="myForm">
+            <p>
+                <label> Name:
+                    <input type="text" id="name"></input>
+                </label>
+                <br>
+                <label>
+                    Phone:
+                    <input type="tel" id="phone"></input>
+                </label>
+            </p>
+            <input type="submit" value="提 交"></button>
+        </form>`;
+
+        document.body.appendChild(ele);
+    </script>
+</body>
+
+</html>
