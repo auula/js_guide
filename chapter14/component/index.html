@@ -11,10 +11,15 @@
 
     <script type="text/javascript">
         // 创建一个能复用代码的
-        let ele = document.createElement('div');
+        // 创建 form 元素
+        let form = document.createElement('form');
+        form.action = "#";
+        form.method = "post";
+        form.id = "myForm";
 
-        // 真的要 HTML 元素组件的组成代码块
-        ele.innerHTML = `
+
+        // 需要 HTML 元素组件的组成代码块
+        form.innerHTML = `
         <form action="#" method="post" id="myForm">
             <p>
                 <label> Name:
@@ -29,7 +34,8 @@
             <input type="submit" value="提 交"></button>
         </form>`;
 
-        document.body.appendChild(ele);
+        // 向 body 中添加一个元素
+        document.body.appendChild(form);
     </script>
 </body>
 
