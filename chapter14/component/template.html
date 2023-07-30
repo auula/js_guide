@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Template</title>
+</head>
+
+<body>
+    <p>通过 Template 标签复用和深度复制元素结构</p>
+    <table border="1">
+        <!-- 表头 -->
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>城市</th>
+            </tr>
+        </thead>
+        <!-- 表格主体 -->
+        <tbody>
+            <!-- 表格行1 -->
+            <tr>
+                <td>John</td>
+                <td>30</td>
+                <td>New York</td>
+            </tr>
+            <!-- 表格行2 -->
+            <tr>
+                <td>Alice</td>
+                <td>25</td>
+                <td>London</td>
+            </tr>
+            <!-- 表格行3 -->
+            <tr>
+                <td>Bob</td>
+                <td>35</td>
+                <td>Paris</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        // 拿到主节点
+        let tablebody = document.querySelector("tbody");
+        // 拿到列表数据
+        let template = document.querySelectorAll("tbody > tr"); // Use querySelectorAll here, and avoid using the same "id" for multiple elements.
+        // 拿到克隆节点数据，深度复制
+        for (let i = 0; i < template.length; i++) {
+            let clone = template[i].cloneNode(true);
+            tablebody.appendChild(clone); // Use appendChild() instead of append() for better compatibility.
+        }
+    </script>
+</body>
+
+</html>
