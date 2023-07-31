@@ -1,12 +1,106 @@
+<!-- https://chat.openai.com/share/048e593d-796f-4fb1-a133-47ccf6a8a4cc -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Custom Web Component</title>
+    <title>自定义 Web 组件</title>
 </head>
 
 <body>
+    <!-- 使用示例 -->
+    <card-img img-src="https://img.ibyte.me/ys302w.png" title-text="示例标题"
+        paragraph-text="这是一个自定义的 Web 组件，支持显示图片、标题和段落内容。"></card-img>
+
+    <script type="text/javascript">
+        // 定义一个 card-img 组件
+        class CardImg extends HTMLElement {
+            // 构造函数
+            constructor() {
+                super();
+
+                // 创建 Shadow DOM
+                const shadow = this.attachShadow({ mode: "open" });
+
+                // 创建 card 的样式
+                const style = document.createElement("style");
+                style.textContent = `
+                    .card {
+                        border: 1px solid #ccc;
+                        border-radius: 8px;
+                        padding: 16px;
+                        max-width: 300px;
+                        margin: 16px;
+                    }
+
+                    img {
+                        max-width: 100%;
+                        border-radius: 8px;
+                    }
+
+                    h2 {
+                        font-size: 1.5rem;
+                        margin-top: 12px;
+                    }
+
+                    p {
+                        margin-top: 8px;
+                    }
+                `;
+
+                // 创建 card 的内容
+                const card = document.createElement("div");
+                card.className = "card";
+
+                // 创建 img 元素
+                const img = document.createElement("img");
+                card.appendChild(img);
+
+                // 创建标题元素
+                const title = document.createElement("h2");
+                card.appendChild(title);
+
+                // 创建段落元素
+                const paragraph = document.createElement("p");
+                card.appendChild(paragraph);
+
+                shadow.appendChild(style);
+                shadow.appendChild(card);
+
+                // 获取 img, title, 和 paragraph 的引用
+                this.img = img;
+                this.title = title;
+                this.paragraph = paragraph;
+            }
+
+            // 当组件被连接到 DOM 时调用
+            connectedCallback() {
+                // 获取属性并设置内容
+                this.updateContent();
+
+                // 监听属性改动
+                const observer = new MutationObserver(() => this.updateContent());
+                observer.observe(this, { attributes: true });
+            }
+
+            // 需要被监听改动的属性
+            static get observedAttributes() { return ["img-src", "title-text", "paragraph-text"]; }
+
+            // 当观察到属性改变时，更新内容
+            updateContent() {
+                this.img.src = this.getAttribute("img-src");
+
+                // 获取 title 和 paragraph 的 DOM 元素，并设置它们的文本内容
+                const title = this.shadowRoot.querySelector("h2");
+                const paragraph = this.shadowRoot.querySelector("p");
+
+                title.textContent = this.getAttribute("title-text");
+                paragraph.textContent = this.getAttribute("paragraph-text");
+            }
+        };
+
+        customElements.define("card-img", CardImg);
+    </script>
 
 </body>
 
