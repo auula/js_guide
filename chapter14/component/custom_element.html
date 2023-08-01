@@ -69,19 +69,14 @@
                 paragraph.textContent = "这是一个自定义的 Web 组件，支持显示图片、标题和段落内容。";
                 card.appendChild(paragraph);
 
+                // 添加自定义样式和 card 到影子节点中
                 shadow.appendChild(style);
                 shadow.appendChild(card);
-
-                // 获取 img, title, 和 paragraph 的引用
-                this.img = img;
-                this.title = title;
-                this.paragraph = paragraph;
 
                 // 判断 shadow 是否为 DocumentFragment 对象
                 console.log(shadow instanceof DocumentFragment);
 
             };
-
 
         };
 
