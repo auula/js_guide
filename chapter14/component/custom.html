@@ -5,12 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自定义 Web 组件</title>
+    <style type="text/css">
+        .input {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            max-width: 330px;
+            margin: 16px;
+            width: 800px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- 使用示例 -->
     <card-img img-src="https://img.ibyte.me/ys302w.png" title-text="示例标题"
         paragraph-text="这是一个自定义的 Web 组件，支持显示图片、标题和段落内容。"></card-img>
+
+    <textarea class="input" id="paragraph-text-input" rows="5" cols="50" placeholder="请输入内容..."></textarea>
 
     <script type="text/javascript">
         // 定义一个 card-img 组件
@@ -99,7 +112,20 @@
             }
         };
 
+        // 注册组件
         customElements.define("card-img", CardImg);
+
+        // 定义一个 input 组件
+        let input = document.getElementById("paragraph-text-input");
+
+        // 获取自定义的 card-img
+        let card = document.querySelector("card-img");
+
+        // 监听 input 输入事件
+        input.addEventListener("input", () => {
+            card.setAttribute("paragraph-text", input.value);
+        });
+
     </script>
 
 </body>
