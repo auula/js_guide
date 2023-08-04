@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Web Components Example</title>
+</head>
+
+<body>
+    <!-- 自定义的 Todo List 组件 -->
+    <todo-list></todo-list>
+
+    <script type="module">
+        // 自定义元素 TodoList
+        class TodoList extends HTMLElement {
+            constructor() {
+                super();
+
+                // 创建 Shadow DOM
+                const shadow = this.attachShadow({ mode: "open" });
+
+                // 创建 Todo List 组件的 HTML 结构
+                const h2 = document.createElement("h2");
+                // 设置标题内容
+                h2.textContent = "Todo List";
+                // 添加标题元素到 Shadow DOM
+                shadow.appendChild(h2);
+
+                const input = document.createElement("input");
+                input.setAttribute("type", "text");
+                input.setAttribute("id", "newTodo");
+                // 设置输入框的占位符
+                input.setAttribute("placeholder", "Add a new todo");
+                // 添加输入框元素到 Shadow DOM
+                shadow.appendChild(input);
+
+                const addButton = document.createElement("button");
+                addButton.setAttribute("id", "addButton");
+                // 设置按钮文本内容
+                addButton.textContent = "Add";
+                // 添加按钮点击事件监听器
+                addButton.addEventListener("click", () => this.addTodo());
+                // 添加按钮元素到 Shadow DOM
+                shadow.appendChild(addButton);
+
+                const ul = document.createElement("ul");
+                // 设置 ul 元素的 ID
+                ul.setAttribute("id", "todoList");
+                // 添加 ul 元素到 Shadow DOM
+                shadow.appendChild(ul);
+
+                // 初始化 todoList 数据
+                this.todos = [];
+            }
+
+            addTodo() {
+                // 获取用户输入的内容
+                const newTodoInput = this.shadowRoot.getElementById("newTodo");
+                // 输入的内容去前后空格
+                const newTodoText = newTodoInput.value.trim();
+                // 如果输入的内容不为空，更新数据
+                if (newTodoText) {
+                    this.todos.push(newTodoText);
+                    this.renderTodos();
+                    newTodoInput.value = "";
+                }
+            }
+
+            // 重新绘图渲染
+            renderTodos() {
+                const todoList = this.shadowRoot.getElementById("todoList");
+                // 清空 todoList 内容
+                todoList.innerHTML = "";
+                this.todos.forEach((todo) => {
+                    const li = document.createElement("li");
+                    // 设置 li 元素的文本内容为 todo 项
+                    li.textContent = todo;
+                    // 添加 li 元素到 todoList
+                    todoList.appendChild(li);
+                });
+            }
+
+            // 首次自定义组件连接到 DOM 后渲染 todoList
+            connectedCallback() {
+                this.renderTodos();
+            }
+        }
+
+        // 全局注册组件
+        customElements.define("todo-list", TodoList);
+    </script>
+</body>
+
+</html>
