@@ -56,7 +56,11 @@
                 shadow.appendChild(content);
 
                 // 初始化 todoList 数据
-                this.todos = [];
+                if (localStorage.getItem("tolist")) {
+                    this.todos = JSON.parse(localStorage.getItem("tolist"));
+                } else {
+                    this.todos = [];
+                }
             }
 
             // 通过 addTodo 自定义添加 todo 事件逻辑
@@ -72,6 +76,9 @@
                     this.renderTodos();
                     newTodoInput.value = "";
                 }
+
+                // 持久化，先序列化 JSON 之后在保存
+                localStorage.setItem("tolist", JSON.stringify(this.todos));
             }
 
             // 重绘方法
