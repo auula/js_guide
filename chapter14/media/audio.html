@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Audio</title>
+</head>
+
+<body>
+    <h3>通过原生 JS 来实现播放音频的效果</h3>
+    <button id="play">播 放</button>
+    <button id="pause">停 止</button>
+    <script type="text/javascript">
+        // 创建一个 audio 播放器
+        let audio = new Audio("y1655.mp3");
+        let play = document.getElementById("play");
+        let pause = document.getElementById("pause");
+
+        // 开始播放按钮
+        play.addEventListener("click", () => {
+            audio.play();
+        });
+
+        // 停止播放按钮
+        pause.addEventListener("click", () => {
+            audio.pause();
+        });
+
+        // 观察播放进度
+        setInterval(() => {
+            console.log("当前播放时间轴：", audio.currentTime);
+            console.log("当前音频时间长：", audio.duration);
+        }, 1000);
+    </script>
+</body>
+
+</html>
