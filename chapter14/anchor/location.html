@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Location Methods Example</title>
+</head>
+
+<body>
+    <button onclick="redirectToReplace()">Replace</button>
+    <button onclick="redirectToAssign()">Assign</button>
+
+    <script>
+        function redirectToReplace() {
+            var newUrl = "http://127.0.0.1:5500/chapter14/anchor/anchor.html";
+            window.location.replace(newUrl);
+        }
+
+        function redirectToAssign() {
+            var newUrl = "http://127.0.0.1:5500/chapter14/anchor/anchor.html";
+            window.location.assign(newUrl);
+        }
+    </script>
+</body>
+
+</html>
