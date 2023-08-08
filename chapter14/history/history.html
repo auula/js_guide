@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document History</title>
+</head>
+
+<body>
+
+    <div>
+        <button onclick="javascript:history.back()">BACK</button>
+        <button onclick="javascript:history.forward()">FORWARD</button>
+        <label>
+            页面编号：
+            <input type="number" id="input" />
+            <button onclick="goto()">GOTO</button>
+        </label>
+    </div>
+    <script type="text/javascript">
+        function goto() {
+            let num = document.getElementById("input").value;
+            history.go(num);
+        }
+    </script>
+</body>
+
+</html>
