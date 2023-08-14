@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Location Hash</title>
+    <style type="text/css">
+        body>div {
+            width: 800px;
+            height: 800px;
+        }
+
+        #top1 {
+            background-color: blueviolet;
+        }
+
+        #top2 {
+            background-color: blue;
+        }
+
+        #top3 {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#top1">GOTO TOP1</a>
+        </li>
+        <li>
+            <a href="#top2">GOTO TOP2</a>
+        </li>
+        <li>
+            <a href="#top3">GOTO TOP3</a>
+        </li>
+    </ul>
+    <div id="top1"></div>
+    <div id="top2"></div>
+    <div id="top3"></div>
+    <script>
+        // location.hash 可以访问到当前页面获取初始锚点位置标签
+        console.log(location.hash);
+
+        // 当页面加载完成执行对应的事件
+        window.addEventListener("load", function () {
+            var initialHash = location.hash; // 获取页面加载时的初始锚点
+            console.log("Initial hash:", initialHash);
+        });
+
+        // 监听锚点更改事件
+        window.addEventListener("hashchange", function () {
+            var newHash = location.hash; // 获取新的锚点
+            console.log("Hash changed:", newHash);
+        });
+
+    </script>
+</body>
+
+</html>
