@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom Routing and State Example</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/page1">Page 1</a>
+        <a href="/page2">Page 2</a>
+    </nav>
+    <div id="content"></div>
+
+    <script>
+        // 页面内容的容器
+        const contentContainer = document.getElementById('content');
+
+        // 页面状态
+        const pageStates = {
+            page1: { count: 0 },
+            page2: { count: 0 }
+        };
+
+        // 更新页面内容
+        function renderPage(pageId) {
+            const currentPage = pageStates[pageId];
+            contentContainer.innerHTML = `
+                <div>
+                    <h1>${pageId}</h1>
+                    <p>Current Count: ${currentPage.count}</p>
+                    <button id="increment">Increment Count</button>
+                </div>
+            `;
+
+            // 添加动态 count 值更新逻辑
+            const incrementButton = document.getElementById('increment');
+            incrementButton.addEventListener('click', function () {
+                currentPage.count++;
+                history.pushState(currentPage, null, `/${pageId}`);
+                renderPage(pageId);
+            });
+        }
+
+        // 处理导航
+        function handleNavigation(event) {
+            event.preventDefault();
+            const targetPage = event.target.getAttribute('href').substring(1);
+            navigateTo(targetPage);
+        }
+
+        // 导航到页面
+        function navigateTo(pageId) {
+            history.pushState(pageStates[pageId], null, `/${pageId}`);
+            renderPage(pageId);
+        }
+
+        // 初始化，添加链接点击事件处理程序
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', handleNavigation);
+        });
+
+        // 处理页面加载和前进后退
+        window.addEventListener('popstate', function (event) {
+            const currentPage = event.state || pageStates[window.location.pathname.substring(1)];
+            renderPage(currentPage);
+        });
+
+        // 初始化，加载初始页面
+        const initialPage = window.location.pathname.substring(1) || 'page1';
+        renderPage(initialPage);
+    </script>
+</body>
+
+</html>
