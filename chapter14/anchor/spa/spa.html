@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Application</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="page1">Page 1</a></li>
+            <li><a href="page2">Page 2</a></li>
+            <li><a href="page3">Page 3</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        <!-- Ajax-loaded content will be inserted here -->
+    </div>
+    <script type="text/javascript">
+        // 获取内容容器
+        const contentContainer = document.getElementById('content');
+
+        // 处理导航菜单链接的点击事件
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault(); // 阻止默认链接行为
+
+                // 获取目标链接的URL
+                const targetUrl = link.getAttribute('href');
+
+                // 使用Ajax请求获取新的内容
+                fetch(targetUrl)
+                    .then(response => response.text())
+                    .then(html => {
+                        // 将新内容插入到内容容器中
+                        contentContainer.innerHTML = html;
+
+                        // 使用PushState更新URL，以便用户可以使用浏览器的前进/后退按钮
+                        history.pushState({ page: targetUrl }, null, targetUrl);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching content:', error);
+                    });
+            });
+        });
+
+        // 监听PopState事件，以便在用户点击浏览器的前进/后退按钮时更新内容
+        window.addEventListener('popstate', event => {
+            const targetUrl = event.state.page;
+
+            // 使用Ajax请求获取对应的内容
+            fetch(targetUrl)
+                .then(response => response.text())
+                .then(html => {
+                    // 更新内容容器的内容
+                    contentContainer.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error fetching content:', error);
+                });
+        });
+
+    </script>
+</body>
+
+</html>
