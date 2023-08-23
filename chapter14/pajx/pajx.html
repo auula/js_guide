@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pjax Example</title>
+    <!-- 引入第三方资源包 -->
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+</head>
+
+<body>
+    <div id="pjax-container">
+        <p>This is the initial content.</p>
+    </div>
+
+    <a href="new-page.html" data-pjax>Load New Page</a>
+
+    <script>
+        var pjax = new Pjax({
+            selectors: ["#pjax-container"],
+            cacheBust: false,
+        });
+    </script>
+</body>
+
+</html>
