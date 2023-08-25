@@ -17,10 +17,12 @@
     <a href="new-page.html" data-pjax>Load New Page</a>
 
     <script>
-        var pjax = new Pjax({
+        // pjax 需要的配置对象
+        const opt = {
             selectors: ["#pjax-container"],
             cacheBust: false,
-        });
+        };
+        var pjax = new Pjax(opt);
     </script>
 </body>
 
