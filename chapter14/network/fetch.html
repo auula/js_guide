@@ -49,12 +49,15 @@
                     tableBody.appendChild(newRow);
                 });
 
+            })
+            .catch(error => {
+                // 捕获到网络错误
+                console.error(error);
+            }).finally(() => {
+                // 必需执行的操作
                 // Remove the loading message
                 nameCell.textContent = "";
                 ageCell.textContent = "";
-            })
-            .catch(error => {
-                console.log(error);
             });
     </script>
 </body>
