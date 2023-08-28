@@ -30,6 +30,7 @@
             .then(response => response.json())
             .then(users => {
 
+                // 获得 table 容器
                 const tableBody = document.getElementById('userTableBody');
 
                 users.forEach(user => {
