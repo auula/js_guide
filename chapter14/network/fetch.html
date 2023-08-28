@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,7 +8,57 @@
 </head>
 
 <body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+            <tr>
+                <td id="nameCell">Loading...</td>
+                <td id="ageCell"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        const nameCell = document.getElementById("nameCell");
+        const ageCell = document.getElementById("ageCell");
 
+        fetch("./users.json")
+            .then(response => response.json())
+            .then(users => {
+
+                const tableBody = document.getElementById('userTableBody');
+
+                users.forEach(user => {
+                    //  创建标签容器装入
+                    const newRow = document.createElement('tr');
+                    // 对应的 json 数据字段
+                    const newNameCell = document.createElement('td');
+                    const newAgeCell = document.createElement('td');
+
+                    newNameCell.textContent = user.name;
+                    newAgeCell.textContent = user.age;
+
+                    newRow.appendChild(newNameCell);
+                    newRow.appendChild(newAgeCell);
+
+                    tableBody.appendChild(newRow);
+                });
+
+                // Remove the loading message
+                nameCell.textContent = "";
+                ageCell.textContent = "";
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    </script>
 </body>
+
+</html>
+
 
 </html>
