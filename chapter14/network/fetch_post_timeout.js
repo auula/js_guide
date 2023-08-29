@@ -36,7 +36,6 @@ async function postWithTimeout(url, requestOptions, timeout) {
             setTimeout(() => {
                 reject(new Error("HTTP Request timed out"));
             }, timeout);
-            reject(fetch(url, requestOptions));
         });
 
         // 看谁先完成
