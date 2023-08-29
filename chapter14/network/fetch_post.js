@@ -26,10 +26,21 @@ const requestOptions = {
 };
 
 // 发送 post 数据
-async function post(url, requestOptions) {
+async function postWithTimeout(url, requestOptions, timeout) {
     try {
         // 发送请求
-        const response = await fetch(url, requestOptions);
+        const fetchPromise = fetch(url, requestOptions);
+
+        // 设置网络超时
+        const timeoutPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(new Error("HTTP Request timed out"));
+            }, timeout);
+        });
+
+        // 看谁先完成
+        const response = await Promise.race([fetchPromise, timeoutPromise]);
+
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -41,7 +52,11 @@ async function post(url, requestOptions) {
     }
 }
 
-post(url, requestOptions);
+// 设置超时时间为 10 秒
+const timeoutMilliseconds = 1000 * 10;
+
+// 设置超时控制
+postWithTimeout(url, requestOptions, timeoutMilliseconds);
 
 console.log('Loading...');
 
