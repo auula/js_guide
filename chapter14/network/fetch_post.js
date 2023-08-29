@@ -22,8 +22,6 @@ const requestOptions = {
     body: JSON.stringify(data)
 };
 
-console.log('Loading...');
-
 // 发送 post 数据
 async function post(url, requestOptions) {
     try {
@@ -41,5 +39,7 @@ async function post(url, requestOptions) {
 }
 
 post(url, requestOptions);
+
+console.log('Loading...');
 
 
