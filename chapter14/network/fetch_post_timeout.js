@@ -13,6 +13,7 @@ const data = {
 const headers = new Headers();
 
 // 设置请求头信息
+headers.set('foo', 'bar');
 headers.set('Content-Type', 'application/json');
 
 // 构建请求配置对象
