@@ -36,6 +36,7 @@ async function postWithTimeout(url, requestOptions, timeout) {
             setTimeout(() => {
                 reject(new Error("HTTP Request timed out"));
             }, timeout);
+            reject(fetch(url, requestOptions));
         });
 
         // 看谁先完成
@@ -44,8 +45,11 @@ async function postWithTimeout(url, requestOptions, timeout) {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
         const data = await response.json();
+
         console.log('Request completed:', data);
+
     } catch (error) {
         console.error("An error occurred:", error);
         console.log('Request failed:', error.message);
