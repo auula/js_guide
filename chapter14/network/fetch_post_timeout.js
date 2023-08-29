@@ -18,7 +18,7 @@ headers.set('Content-Type', 'application/json');
 // 构建请求配置对象
 const requestOptions = {
     // 请求类型
-    method: 'POST',·
+    method: 'POST',
     // 设置请求头部为 JSON 格式
     headers: headers,
     // 将数据转换为 JSON 字符串并作为请求体
