@@ -1,4 +1,4 @@
-// 请求地址
+// fetch 如何解析请求头，请求地址
 const url = "https://randomuser.me/api/";
 
 fetch(url)
