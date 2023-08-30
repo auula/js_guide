@@ -30,9 +30,6 @@
             .then(response => response.json())
             .then(users => {
 
-                // 获得 table 容器
-                const tableBody = document.getElementById('userTableBody');
-
                 users.forEach(user => {
                     // 创建标签容器装入
                     const newRow = document.createElement('tr');
@@ -46,7 +43,8 @@
                     newRow.appendChild(newNameCell);
                     newRow.appendChild(newAgeCell);
 
-                    tableBody.appendChild(newRow);
+                    // 将构建的 tr 添加到 userTableBody 中
+                    userTableBody.appendChild(newRow);
                 });
 
             })
