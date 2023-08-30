@@ -33,7 +33,7 @@ async function postWithTimeout(url, requestOptions, timeout) {
         const fetchPromise = fetch(url, requestOptions);
 
         // 设置网络超时
-        const timeoutPromise = new Promise((resolve, reject) => {
+        const timeoutPromise = new Promise((_, reject) => {
             setTimeout(() => {
                 reject(new Error("HTTP Request timed out"));
             }, timeout);
