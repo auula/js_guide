@@ -30,7 +30,7 @@ async function postWithTimeout(url, requestOptions, timeout) {
         // 发送请求
         const fetchPromise = fetch(url, requestOptions);
 
-        // 设置网络超时
+        // 设置网络超时，这里会影响到运行时主进程，阻塞到超时时间到为止
         const timeoutPromise = new Promise((_, reject) => {
             setTimeout(() => {
                 reject(new Error("HTTP Request timed out"));
@@ -62,8 +62,6 @@ const fetchPromise = postWithTimeout(url, requestOptions, timeoutMilliseconds);
 
 fetchPromise.then(() => {
     console.log('Done.');
-}).catch(() => {
-    console.log('Done with error.');
 });
 
 console.log('Loading...');
