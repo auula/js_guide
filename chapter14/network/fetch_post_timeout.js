@@ -1,5 +1,3 @@
-// fetch 如何对数据进行编码请求
-
 // 一个 echo 服务器地址
 const url = "https://httpbin.org/post";
 
@@ -39,16 +37,16 @@ async function postWithTimeout(url, requestOptions, timeout) {
             }, timeout);
         });
 
-        // 看谁先完成
-        const response = await Promise.race([fetchPromise, timeoutPromise]);
+        // 使用 Promise.race 来等待谁先完成
+        const result = await Promise.race([fetchPromise, timeoutPromise]);
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+        if (result instanceof Response) {
+            const data = await result.json();
+            console.log('Request completed:', data);
+        } else {
+            // 请求超时
+            throw result;
         }
-
-        const data = await response.json();
-
-        console.log('Request completed:', data);
 
     } catch (error) {
         console.error("An error occurred:", error);
@@ -60,8 +58,12 @@ async function postWithTimeout(url, requestOptions, timeout) {
 const timeoutMilliseconds = 1000 * 10;
 
 // 设置超时控制
-postWithTimeout(url, requestOptions, timeoutMilliseconds);
+const fetchPromise = postWithTimeout(url, requestOptions, timeoutMilliseconds);
+
+fetchPromise.then(() => {
+    console.log('Done.');
+}).catch(() => {
+    console.log('Done with error.');
+});
 
 console.log('Loading...');
-
-
