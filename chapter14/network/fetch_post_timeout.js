@@ -1,3 +1,5 @@
+// https://chat.openai.com/share/66fd02a1-76d0-473f-be36-57898fb5e69e
+
 // 一个 echo 服务器地址
 const url = "https://httpbin.org/post";
 
@@ -62,6 +64,8 @@ const fetchPromise = postWithTimeout(url, requestOptions, timeoutMilliseconds);
 
 fetchPromise.then(() => {
     console.log('Done.');
+    // 立即结束程序
+    process.exit();
 });
 
 console.log('Loading...');
