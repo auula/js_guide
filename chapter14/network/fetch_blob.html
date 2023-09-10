@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Fetch Blob</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const url = "http://127.0.0.1:5500/chapter14/network/y1655.mp3"
+
+        // 假设您已经获取了一个 Blob 对象，例如从网络请求或用户上传
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.blob();
+            })
+            .then(blobData => {
+                // 创建一个临时 Blob URL
+                const audioUrl = URL.createObjectURL(blobData);
+
+                // 创建一个 Audio 元素并设置其 src
+                const audioElement = new Audio(audioUrl);
+
+                // 播放音频
+                audioElement.play();
+
+                // 可以在需要的时候释放 Blob 数据的 URL
+                URL.revokeObjectURL(audioUrl);
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+    </script>
+</body>
+
+</html>
