@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Source</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const eventSource = new EventSource('http://localhost:3000/events');
+
+        eventSource.onopen = (event) => {
+            console.log('Connection opened:', event);
+        };
+
+        eventSource.onmessage = (event) => {
+            console.log('Received message:', event.data);
+        };
+
+        eventSource.onerror = (error) => {
+            console.error('EventSource failed:', error);
+        };
+
+    </script>
+</body>
+
+</html>
