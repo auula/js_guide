@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Example</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const socket = new WebSocket('wss://echo.websocket.org');
+
+        // 连接建立时的处理
+        socket.addEventListener('open', event => {
+            console.log('WebSocket连接已建立:', event);
+
+            // 向服务器发送消息
+            const message = 'Hello, server!';
+            console.log('发送消息:', message);
+            socket.send(message);
+        });
+
+        // 接收到消息时的处理
+        socket.addEventListener('message', event => {
+            console.log('收到消息:', event.data);
+        });
+
+        // 连接关闭时的处理
+        socket.addEventListener('close', event => {
+            console.log('WebSocket连接已关闭:', event);
+        });
+
+        // 发生错误时的处理
+        socket.addEventListener('error', event => {
+            console.error('WebSocket发生错误:', event);
+        });
+
+    </script>
+</body>
+
+</html>
