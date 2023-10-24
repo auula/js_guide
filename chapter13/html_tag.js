@@ -24,7 +24,9 @@ function html(strings, ...values) {
     return result;
 }
 
-let operator = "<";
+// <b>x 1 &lt 2 y</b>
+// 过度过滤掉了，原本 1 < 2 是正确的
+let operator = "1 < 2";
 
 let res = html`<b>x ${operator} y</b>`;
 
