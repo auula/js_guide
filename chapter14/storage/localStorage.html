@@ -1,0 +1,25 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Document Local Storage Example</title>
+</head>
+
+<body>
+    <script>
+        // localStorage 的使用演示 API
+        localStorage.setItem("name", "Leon Ding");
+        // 通过 getItem 方法获取数据
+        console.log(localStorage.getItem("name"));
+        // 直接通过属性访问数据，弊端是当属性不存在时会返回 undefined，而不是 null
+        console.log("通过 attribute 属性来获取：",localStorage.name);
+        // 删除数据localStorage.deleteItem("name");
+        delete localStorage.name;
+        console.log("删除后：",localStorage.name);
+        // 清除所有数据
+        localStorage.clear();
+    </script>
+</body>
+
+</html>
