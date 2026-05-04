@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Document Session Storage Example</title>
+</head>
+<body>
+    <script>
+        // sessionStorage 的使用演示 API
+        // sessionStorage 特定在于它的数据只在当前会话中有效，当浏览器窗口关闭时，数据会被清除，
+        // 而 localStorage 则是持久化存储，数据会一直存在，除非手动删除。
+        sessionStorage.setItem("name", "Leon Ding");
+        // 通过 getItem 方法获取数据
+        console.log(sessionStorage.getItem("name"));
+        // 直接通过属性访问数据，弊端是当属性不存在时会返回 undefined，而不是 null
+        console.log("通过 attribute 属性来获取：",sessionStorage.name);
+        // 删除数据sessionStorage.deleteItem("name");
+        delete sessionStorage.name;
+        console.log("删除后：",sessionStorage.name);
+
+        // 默认值都是 string 类型，如果需要存储对象，可以使用 JSON.stringify 和 JSON.parse 来进行转换
+        const user = {
+            name: "Leon Ding", 
+            age: 26,
+            city: "Shanghai"
+        };
+
+        sessionStorage.setItem("user", JSON.stringify(user));
+        const userinfo = JSON.parse(sessionStorage.getItem("user"));
+        console.log("存储的用户对象：", userinfo.name, userinfo.age, userinfo.city);
+        
+        // 清除所有数据
+        sessionStorage.clear();
+    </script>
+</body>
+</html>
