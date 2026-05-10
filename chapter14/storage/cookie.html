@@ -11,7 +11,7 @@
             const cookies = document.cookie.split(';');
             cookies.forEach(cookie => {
                 if (!cookie.trim() || !cookie.includes('=')) {
-                    // 跳过空值和不包含等号的无效cookie
+                    // 跳过空值和不包含等号的无效 cookie
                     return
                 }; 
                 const [name, value] = cookie.trim().split('=');
