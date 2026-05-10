@@ -24,9 +24,11 @@
             age: 26,
             city: "Shanghai"
         };
+
         localStorage.setItem("user", JSON.stringify(user));
         const userinfo = JSON.parse(localStorage.getItem("user"));
         console.log("存储的用户对象：", userinfo.name, userinfo.age, userinfo.city);
+        
         // 清除所有数据
         localStorage.clear();
     </script>

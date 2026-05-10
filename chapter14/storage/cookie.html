@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Cookie Example</title>
+</head>
+<body>
+    <script>
+        function outputCookies() {
+            var result = new Map();
+            const cookies = document.cookie.split(';');
+            cookies.forEach(cookie => {
+                if (!cookie.trim() || !cookie.includes('=')) {
+                    // 跳过空值和不包含等号的无效cookie
+                    return
+                }; 
+                const [name, value] = cookie.trim().split('=');
+                result.set(name, value);
+            });
+            return result;
+        }
+
+        // 将 cookie 的值拿出来，并且设置到界面上
+        var html = "";
+        outputCookies().forEach((value, key) => {
+            html += `<p>${key}: ${value}</p>`;
+        });
+
+        // 将结果显示在页面上 body 中
+        document.body.innerHTML = html;
+    </script>
+</body>
+</html>
