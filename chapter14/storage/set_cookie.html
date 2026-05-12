@@ -11,8 +11,6 @@
         class CookieBuilder {
             // 在 ES6 中不能私有化默认的构造器，那如何实现这个私有化构造器呢？
             static #SECRET = Symbol('CookieBuilder');
-
-
             // 默认构造器构造出来 的 CookieBuilder 对象，包含一个 parts 数组，用于存储构建 Cookie 的各个部分。
             constructor(secret, name, value) {
                 if (secret !== CookieBuilder.#SECRET) {
@@ -64,9 +62,6 @@
             }
         }
 
-
-
-
         for (let i = 0; i < 10; i++) {
             // 通过 CookieBuilder 类来构建一个 Cookie，并将其应用到 document.cookie 中
             CookieBuilder.of(`token-${i}`, `abc-${i}`)
@@ -76,12 +71,10 @@
                 .apply();
         }
 
-
         // 这行代码会抛出错误，因为构造器是私有的，不能直接调用，
         // 通过 symbol 来实现私有化构造器，确保只能通过静态工厂方法来创建 CookieBuilder 对象，
         // 从而控制了对象的创建过程，并且可以在工厂方法中添加必要的校验逻辑。
         // new CookieBuilder(CookieBuilder.#SECRET, "invalid", "cookie"); 
-
         console.log(document.cookie); 
     </script>
 </body>
