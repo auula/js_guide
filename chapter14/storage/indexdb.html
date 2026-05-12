@@ -8,8 +8,70 @@
 
 <body>
     <script>
-        // 打开一个 IndexedDB 数据库
-        const request = indexedDB.open('myDatabase', 1);   
+        // 打开数据库
+        const request = indexedDB.open("mydb", 1);
+
+        // 升级数据库
+        request.onupgradeneeded = (event) => {
+
+            const db = event.target.result;
+
+            if (!db.objectStoreNames.contains("users")) {
+
+                const store =
+                    db.createObjectStore(
+                        "users",
+                        {
+                            keyPath: "id"
+                        }
+                    );
+
+                store.createIndex("name", "name");
+            }
+        };
+
+        // 打开成功
+        request.onsuccess = (event) => {
+
+            console.log("Database opened successfully");
+
+            const db = event.target.result;
+
+            // 开启事务
+            const tx =
+                db.transaction(
+                    "users",
+                    "readwrite"
+                );
+
+            // 获取 object store
+            const store =
+                tx.objectStore("users");
+
+            // 添加数据
+            const request = store.add({
+                id: 1,
+                name: "Leon",
+                age: 26
+            });
+
+            // 最为恶心就是这个回调函数
+            request.onsuccess = () => {
+                console.log(request.result);
+            };
+
+            request.onerror = () => {
+                console.error(request.error);
+            };
+        };
+
+        // 打开失败
+        request.onerror = (event) => {
+            console.error(
+                "Error opening database:",
+                event.target.error
+            );
+        };
     </script>
 </body>
 
