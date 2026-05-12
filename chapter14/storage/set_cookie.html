@@ -32,7 +32,7 @@
                     throw new Error("cookie name required");
                 }
 
-                return new CookieBuilder(name, value);
+                return new CookieBuilder(CookieBuilder.#SECRET, name, value);
             }
 
             path(path) {
@@ -64,18 +64,24 @@
             }
         }
 
-        // 通过 CookieBuilder 类来构建一个 Cookie，并将其应用到 document.cookie 中
-        CookieBuilder.of("token", "abc123")
-            .path("/")
-            .maxAge(3600)
-            .secure()
-            .apply();
+
+
+
+        for (let i = 0; i < 10; i++) {
+            // 通过 CookieBuilder 类来构建一个 Cookie，并将其应用到 document.cookie 中
+            CookieBuilder.of(`token-${i}`, `abc-${i}`)
+                .path("/")
+                .maxAge(3600)
+                .secure()
+                .apply();
+        }
+
 
         // 这行代码会抛出错误，因为构造器是私有的，不能直接调用，
         // 通过 symbol 来实现私有化构造器，确保只能通过静态工厂方法来创建 CookieBuilder 对象，
         // 从而控制了对象的创建过程，并且可以在工厂方法中添加必要的校验逻辑。
         // new CookieBuilder(CookieBuilder.#SECRET, "invalid", "cookie"); 
-        
+
         console.log(document.cookie); 
     </script>
 </body>
