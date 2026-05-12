@@ -3,11 +3,16 @@
 // Symobl 一般都是用来对已有对象添加属性的
 // 不会覆盖掉原对象属性的值
 
+
+// JavaScript 对象属性名长期只有 string，导致“命名冲突”越来越严重。
 let person = {
 	Sons: ["sons1","sons2","sons3"],
 	age: 24,
 };
 
+// 如果在大项目中 JS 作为一个动态添加属性的语言，很难知道这个 person 到底有没有 name 这个属性？
+// 如果 name 这个属性已经存在了，那么就会覆盖掉原来的值，导致程序出错。
+// 但是如果使用 Symbol 来添加属性，就不会有这个问题了，因为每个 Symbol 都是唯一的，不会和其他属性冲突。
 console.log(person);
 
 let name = Symbol("name");
