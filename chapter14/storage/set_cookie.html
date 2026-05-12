@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Set Cookie Example</title>
+</head>
+
+<body>
+    <script>
+        class CookieBuilder {
+            // 默认构造器构造出来 的 CookieBuilder 对象，包含一个 parts 数组，用于存储构建 Cookie 的各个部分。
+            constructor(name, value) {
+                this.parts = [
+                    `${encodeURIComponent(name)}=${encodeURIComponent(value)}`
+                ];
+            }
+
+            path(path) {
+                this.parts.push(`path=${path}`);
+                return this;
+            }
+
+            maxAge(seconds) {
+                this.parts.push(`max-age=${seconds}`);
+                return this;
+            }
+
+            secure() {
+                this.parts.push(`secure`);
+                return this;
+            }
+
+            sameSite(policy) {
+                this.parts.push(`samesite=${policy}`);
+                return this;
+            }
+
+            build() {
+                return this.parts.join('; ');
+            }
+
+            apply() {
+                document.cookie = this.build();
+            }
+        }
+
+        // 通过 CookieBuilder 类来构建一个 Cookie，并将其应用到 document.cookie 中
+        document.cookie = new CookieBuilder("token", "abc123")
+            .path("/")
+            .maxAge(3600)
+            .secure()
+            .apply();
+
+        console.log(document.cookie); 
+    </script>
+</body>
+
+</html>
