@@ -11,7 +11,10 @@
         // 创建一个复杂计算的工作线程
         const worker = new Worker("worker.js");
         // 向子线程发送需要计算的数据
-        worker.postMessage(512);
+        worker.postMessage({
+            type: "compute",
+            payload: 512
+        });
         // 监听子线程发送回来的结果
         worker.onmessage = (event) => {
             console.log("Received message from worker:", event.data);
