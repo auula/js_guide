@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Import Script Example</title>
+</head>
+<body>
+    <script>
+        // 创建一个工作线程
+        const worker = new Worker("import_script_worker.js");
+        // 向子线程发送消息，触发导入脚本的操作
+        worker.postMessage({ a: 5, b: 6 });
+        // 监听子线程发送回来的结果
+        worker.onmessage = (event) => {
+            console.log("Received message from worker:", event.data);
+        };
+    </script>
+</body>
+</html>
