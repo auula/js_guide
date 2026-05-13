@@ -1,0 +1,22 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Worker Example</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个复杂计算的工作线程
+        const worker = new Worker("worker.js");
+        // 向子线程发送需要计算的数据
+        worker.postMessage(512);
+        // 监听子线程发送回来的结果
+        worker.onmessage = (event) => {
+            console.log("Received message from worker:", event.data);
+        };
+    </script>
+</body>
+
+</html>
