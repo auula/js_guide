@@ -15,4 +15,6 @@ self.onmessage = (event) => {
         default:
             console.error("Unknown message type:", event.data.type);
     }
+    // 任务完成后关闭 worker
+    self.close(); 
 }
