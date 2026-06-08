@@ -12,3 +12,17 @@ console.log(`Architecture: ${process.arch}`);
 
 // 获取命令行参数
 console.log(process.argv);
+
+// 输出当前工作目录
+console.log(`Current Working Directory: ${process.cwd()}`);
+
+// 输出环境变量
+console.log('Environment Variables:', process.env);
+
+// 输出当前用户的主目录
+console.log(`User Home Directory: ${process.env.HOME || process.env.USERPROFILE}`);
+
+// 输出系统内存信息
+console.log(`Total Memory: ${process.memoryUsage().rss} bytes`);
+console.log(`Heap Total: ${process.memoryUsage().heapTotal} bytes`);
+console.log(`Heap Used: ${process.memoryUsage().heapUsed} bytes`);
