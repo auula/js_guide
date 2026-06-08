@@ -5,8 +5,10 @@ console.log("Hello Node.js!");
 
 // 输出当前平台的信息
 console.log(`Platform: ${process.platform}`);
+
 // 输出当前 Node.js 版本
 console.log(`Node.js Version: ${process.version}`);
+
 // 输出当前系统的 CPU 架构
 console.log(`Architecture: ${process.arch}`);
 
